@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Flightss from './components/Flightss';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <addFlight />
+    <Flightss/>
   </React.StrictMode>,
   document.getElementById('root')
 );
