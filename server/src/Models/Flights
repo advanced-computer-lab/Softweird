@@ -1,0 +1,44 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const flightsSchema = new Schema({
+  FlightNumber: {
+    type: Number,
+    required: true,
+    },  
+  From: {
+    type: String,
+    required: true,
+  },
+  To: {
+    type: String,
+    required: true
+  },
+  Airport: {
+    type: String,
+    required: true
+  },
+  Cabin: {
+    type: String,
+    required: true
+  },
+  AvailableSeats: {
+    type: Number,
+    required: true,
+  },
+  Date: {
+    type: String,
+    required: true
+  },
+  DapartureTime: {
+    type: String,
+    required: true
+  },
+  ArrivalTime: {
+    type: String,
+    required: true
+  },
+}, { timestamps: true });
+mongoose.models = {}
+const Flights = mongoose.model('Flights', flightsSchema);
+module.exports = Flights;
