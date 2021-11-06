@@ -4,11 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Flightss from './components/Flightss';
-
+import ConfirmButton from './components/ConfirmButton';
 
 ReactDOM.render(
   <React.StrictMode>
     <Flightss/>
+    <ConfirmButton/>
   </React.StrictMode>,
   document.getElementById('root')
 );
