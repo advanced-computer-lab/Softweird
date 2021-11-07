@@ -1,29 +1,30 @@
-const express = require('express');
+const express = require("express");
 const mongoose = require('mongoose');
-const connectDB = require('../config/db');
-const usersController = require('./Routes/usersController');
-const flightsController = require('./Routes/flightsController');
-const reservationsController = require('./Routes/reservationsController');
+
+const MongoURI = 'mongodb+srv://Softweird:Softweird1234@cluster0.vfp8z.mongodb.net/Softweird?retryWrites=true&w=majority' ;
 
 const app = express();
-const port = process.env.PORT || 8082;
-const Users = require('./Models/Users');
+const port = process.env.PORT || "8000";
+const chalk = require('chalk');
+const cors = require('cors')
+/*
+const usersController = require('./Routes/usersController');
+const flightsController = require('./Routes/flightController');
+const reservationsController = require('./Routes/reservationController');
+*/
 
-// Connect Database
-connectDB();
 
-app.get("/Home", (req, res) => {
-    res.status(200).send("You have everything installed !");
-  });
-  app.get("/createUser", async(req, res) => {
-    res.status(200).send("You have everything installed !");
-    const obj1 = new Users({"Name": "dgfv", "Email": "rm", "Age": 21, "BornIn": "00",  "PhoneNumber": "lll", "Job": "student" });
-    const obj2 = await obj1.save();
-    console.log(obj1);
-  });
-  app.get("/find", async(req, res) => {
-    const obj3 = await Users.find({Job:"student"});
-    res.send(obj3);
-  });
+const bp = require('body-parser');
+app.use(bp.json());
+app.use(bp.urlencoded({ extended: true }));
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
+mongoose.connect(MongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+.then(result =>console.log(chalk.bold.cyan("MongoDB is now connected")) )
+.catch(err => console.log(err));
+
+app.use(cors())
+
+
+app.listen(port, () => {
+  console.log(chalk.bold.yellow(`Listening to requests on http://localhost:${port}`));
+});
