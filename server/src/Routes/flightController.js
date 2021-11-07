@@ -16,7 +16,7 @@ router.get('/get-all-flights', (req, res) => {
 });
 
 //Get a certain entered Flight with a known attribute
-router.get('/get-all-users/:FlightNumber', (req, res) => {
+router.get('/get-all-flights/:FlightNumber', (req, res) => {
     Flight.find({FlightNumber:req.params.FlightNumber})
       .then(result => {
         res.send(result);
@@ -53,7 +53,7 @@ router.get('/get-all-users/:FlightNumber', (req, res) => {
 
   //Deleting an existing Flight
   router.delete('/delete-Flight/:FlightNumber', (req,res)=>{
-    Flight.findByFlighNumberAndRemove(req.params.FlightNumber).then(result =>{
+    Flight.findByFlightNumberAndRemove(req.params.FlightNumber).then(result =>{
 
         res.status(200).send("Flight Deleted ");
         console.log(chalk.bold.red("The Flight is deleted successfully !"));

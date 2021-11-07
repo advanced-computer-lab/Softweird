@@ -1,17 +1,18 @@
 const express = require("express");
 const mongoose = require('mongoose');
 
-const MongoURI = 'mongodb+srv://Softweird:Softweird1234@cluster0.vfp8z.mongodb.net/Softweird?retryWrites=true&w=majority' ;
 
+const {MongoURI} = require('../src/config/db');
 const app = express();
 const port = process.env.PORT || "8000";
 const chalk = require('chalk');
 const cors = require('cors')
-/*
+
 const usersController = require('./Routes/usersController');
-const flightsController = require('./Routes/flightController');
-const reservationsController = require('./Routes/reservationController');
-*/
+const flightController = require('./Routes/flightController');
+const reservationController = require('./Routes/reservationController');
+const adminController = require('./Routes/adminController');
+
 
 
 const bp = require('body-parser');
@@ -23,6 +24,13 @@ mongoose.connect(MongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
 .catch(err => console.log(err));
 
 app.use(cors())
+
+app.use('/user' , usersController);
+app.use('/admin' , adminController);
+app.use('/flight' , flightController);
+app.use('/reservation' , reservationController);
+
+
 
 
 app.listen(port, () => {

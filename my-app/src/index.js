@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Flightss from './components/Flightss';
-import ConfirmButton from './components/ConfirmButton';
+
 import Searchbar from './components/Searchbar';
 ReactDOM.render(
   <React.StrictMode>
@@ -13,7 +12,6 @@ ReactDOM.render(
 
     <Flightss/>
     
-    <ConfirmButton/>
     
   </React.StrictMode>,
   document.getElementById('root')
