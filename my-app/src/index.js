@@ -5,11 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Flightss from './components/Flightss';
 import ConfirmButton from './components/ConfirmButton';
-
+import Searchbar from './components/Searchbar';
 ReactDOM.render(
   <React.StrictMode>
+
+    <Searchbar/>
+
     <Flightss/>
+    
     <ConfirmButton/>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
