@@ -12,45 +12,52 @@ export default function TextFieldSizes() {
       noValidate
       autoComplete="off"
     >
+       <div>
+        <TextField
+          label="Flight number"
+          id="txt6"
+          defaultValue=" "
+          size="normal"
+        />
+        <TextField label="Date" id="txt1" defaultValue=" " />
+      </div>
       <div>
         <TextField
           label="From"
           id="txt6"
-          defaultValue="Small"
-          size="small"
+          defaultValue=" "
+          size="normal"
         />
-        <TextField label="To" id="txt1" defaultValue="Normal" />
+        <TextField label="To" id="txt1" defaultValue=" " />
       </div>
       <div>
         <TextField
-          label="2"
-          id="txt2"
-          defaultValue="Small"
-          variant="filled"
-          size="small"
+          label="Departure"
+          id="txt6"
+          defaultValue=" "
+          size="normal"
         />
-        <TextField
-          label="Size"
-          id="txt3"
-          defaultValue="Normal"
-          variant="filled"
-        />
+        <TextField label="Arrival" id="txt1" defaultValue=" " />
       </div>
       <div>
         <TextField
-          label="Size"
-          id="txt4"
-          defaultValue="Small"
-          size="small"
-          variant="standard"
+          label="Cabin"
+          id="txt6"
+          defaultValue=" "
+          size="normal"
         />
-        <TextField
-          label="Size"
-          id="txt5"
-          defaultValue="Normal"
-          variant="standard"
-        />
+        <TextField label="Available seats" id="txt1" defaultValue=" " />
       </div>
+      <div>
+        <TextField
+          label="Airport"
+          id="txt6"
+          defaultValue=" "
+          size="normal"
+        />
+        
+      </div>
+      
     </Box>
     
 
