@@ -5,13 +5,25 @@ import reportWebVitals from './reportWebVitals';
 import Flightss from './components/Flightss';
 
 import Searchbar from './components/Searchbar';
+import ViewFlights from './components/ViewFlights';
+import DeleteFlight from './components/DeleteFlight';
+import UpdateFlight from './components/UpdateFlight';
+import SearchFlight from './components/SearchFlight';
 ReactDOM.render(
   <React.StrictMode>
-
+ 
+    
     <Searchbar/>
 
     <Flightss/>
-    
+
+    <ViewFlights/>
+
+    <DeleteFlight/>
+
+    <UpdateFlight/>
+
+    <SearchFlight/>
     
   </React.StrictMode>,
   document.getElementById('root')

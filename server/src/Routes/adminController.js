@@ -17,3 +17,5 @@ router.post('/create-admin', (req, res) => {
         console.log(err);
       });
   });
+
+  module.exports = router
