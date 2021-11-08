@@ -14,15 +14,20 @@ ReactDOM.render(
  
     
     <Searchbar/>
-
+   
+    Create Flight
     <Flightss/>
-
+    
+    All Flights
     <ViewFlights/>
-
+    
+    Delete Flight
     <DeleteFlight/>
-
+   
+    Update Flight
     <UpdateFlight/>
-
+   
+    Search For A Flight
     <SearchFlight/>
     
   </React.StrictMode>,

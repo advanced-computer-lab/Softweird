@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import {useState,useEffect,useRef} from 'react';
 import axios from "axios";
 
+
 export default function DeleteFlight() {
   //const [flight,setFlight] = useState();
   const [confirm,setConfirm] = useState(false);
@@ -31,15 +32,15 @@ export default function DeleteFlight() {
        AvailableSeats: nos.current.value,
        Date: date.current.value,
        DepartureTime: departure.current.value,
-       ArrivalTime: arrival.current.value,
+       ArrivalTime: arrival.current.value
     };
 
     if (confirm){
-        console.log(body)
-      axios.post(`http://localhost:8000/flight/delete-Flight/:FlightNumber`,body).then(res=> console.log(res)).catch();
-      setConfirm(false);
-      }
-  
+      console.log(body)
+    axios.delete(`http://localhost:8000/flight/delete-Flight/${fn.current.value}`,body).then(res=> console.log(res)).catch();
+    setConfirm(false);
+    }
+
   }, [confirm])
 
   return (
@@ -55,34 +56,39 @@ export default function DeleteFlight() {
       autoComplete="off"
     >
        <div>
-         <label>Flight Number : </label>
+         <label>FlightNumber: </label>
         <input
           ref = {fn}
         />
-        <label>Date : </label>
+        <label>Date: </label>
         <input ref={date} />
         
         
       
       
-      <label>From : </label>
+      <label>From: </label>
         <input ref={from} />
+        
+         <label>To: </label>
+        <input
+          ref = {to}
+        />
       
-      
-      <label>Departure : </label>
+      <label>DepartureTime: </label>
         <input ref={departure} />
-        <label>ArrivalTime : </label>
+
+        <label>ArrivalTime: </label>
         <input ref={arrival} />
       
       
-      <label>Cabin : </label>
+      <label>Cabin: </label>
         <input ref={cabin} />
 
-        <label>AvailableSeats : </label>
+        <label>AvailableSeats: </label>
         <input ref={nos} />
       
       
-      <label>Airport : </label>
+      <label>Airport: </label>
         <input ref={airport} />
         
       </div>
