@@ -67,8 +67,14 @@ export default function UpdateFlight() {
       <label>From : </label>
         <input ref={from} />
       
+
+        
+         <label>To : </label>
+        <input
+          ref = {to}
+        />
       
-      <label>Departure : </label>
+      <label>DepartureTime : </label>
         <input ref={departure} />
         <label>ArrivalTime : </label>
         <input ref={arrival} />

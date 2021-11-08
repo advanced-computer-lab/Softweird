@@ -46,8 +46,6 @@ export default function SearchFlight() {
 
   return (
 
-   
-   
     <Box
 
       component = "form"
@@ -58,35 +56,40 @@ export default function SearchFlight() {
       autoComplete="off"
     >
        <div>
-         <label>Flight Number : </label>
+         <label>FlightNumber: </label>
         <input
           ref = {fn}
         />
-        <label>Date : </label>
+        <label>Date: </label>
         <input ref={date} />
         
         
       
       
-      <label>From : </label>
+      <label>From: </label>
         <input ref={from} />
       
-      
-      <label>Departure : </label>
+        
+         <label>To: </label>
+        <input
+          ref = {to}
+        />
+
+      <label>DepartureTime: </label>
         <input ref={departure} />
 
-        <label>ArrivalTime : </label>
+        <label>ArrivalTime: </label>
         <input ref={arrival} />
       
       
-      <label>Cabin : </label>
+      <label>Cabin: </label>
         <input ref={cabin} />
 
-        <label>AvailableSeats : </label>
+        <label>AvailableSeats: </label>
         <input ref={nos} />
       
       
-      <label>Airport : </label>
+      <label>Airport: </label>
         <input ref={airport} />
         
       </div>
@@ -94,12 +97,11 @@ export default function SearchFlight() {
       Search
     </Button>
       
-    
-        
 
     </Box>
-   )
-   return (
+
+   
+   );return (
     flight.map(a =>{return <div>
     <label>{a.FlightNumber}</label>
     <label>{a.From}</label>

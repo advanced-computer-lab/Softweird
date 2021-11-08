@@ -55,34 +55,40 @@ export default function DeleteFlight() {
       autoComplete="off"
     >
        <div>
-         <label>Flight Number : </label>
+         <label>FlightNumber: </label>
         <input
           ref = {fn}
         />
-        <label>Date : </label>
+        <label>Date: </label>
         <input ref={date} />
         
         
       
       
-      <label>From : </label>
+      <label>From: </label>
         <input ref={from} />
       
+
+        
+         <label>To: </label>
+        <input
+          ref = {to}
+        />
       
-      <label>Departure : </label>
+      <label>DepartureTime: </label>
         <input ref={departure} />
-        <label>ArrivalTime : </label>
+        <label>ArrivalTime: </label>
         <input ref={arrival} />
       
       
-      <label>Cabin : </label>
+      <label>Cabin: </label>
         <input ref={cabin} />
 
-        <label>AvailableSeats : </label>
+        <label>AvailableSeats: </label>
         <input ref={nos} />
       
       
-      <label>Airport : </label>
+      <label>Airport: </label>
         <input ref={airport} />
         
       </div>
