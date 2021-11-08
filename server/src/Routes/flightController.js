@@ -6,6 +6,7 @@ const chalk = require('chalk');
 
 //Get all entered Flights
 router.get('/get-all-flights', (req, res) => {
+  
   Flight.find()
     .then(result => {
       res.send(result);
@@ -54,7 +55,7 @@ router.get('/get-all-flights', (req, res) => {
 
   //Updating an existing Flight
   router.put('/update-Flight/:FlightNumber', (req,res)=>{
-    Flight.findByFlightNumberAndUpdate(req.params.FlightNumber,req.body).then(result =>{
+    Flight.findByIdAndUpdate(req.params.id, req.body).then(result =>{
 
         res.status(200).send("flight updated ");
         console.log(chalk.bold.blue('The Flight is Updated successfully !'));
@@ -66,7 +67,8 @@ router.get('/get-all-flights', (req, res) => {
 
   //Deleting an existing Flight
   router.delete('/delete-Flight/:FlightNumber', (req,res)=>{
-    Flight.findByFlightNumberAndRemove(req.params.FlightNumber).then(result =>{
+    console.log("nnnnn");
+    Flight.findByIdAndRemove(req.params.id, req.body).then(result =>{
 
         res.status(200).send("Flight Deleted ");
         console.log(chalk.bold.red("The Flight is deleted successfully !"));

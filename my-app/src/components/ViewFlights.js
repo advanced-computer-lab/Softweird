@@ -13,6 +13,7 @@ export default function ViewFlights() {
 
 
   return (
+    
     l.map(a =>{return <div>
     <label>{a.FlightNumber}</label>
     <label>{a.From}</label>
@@ -22,11 +23,7 @@ export default function ViewFlights() {
     <label>{a.AvailableSeats}</label>
     <label>{a.Date}</label>
     <label>{a.DepartureTime}</label>
-    <label>{a.ArrivalTime}</label>
-
+    <label>{a.ArrivalTime}</label></div>})
     
-    
-    
-    </div>})
   )
 }

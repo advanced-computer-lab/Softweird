@@ -12,15 +12,15 @@ export default function UpdateFlight() {
     // set the flight to be created
     setConfirm(true);
   }
-  const fn = useRef("");
-  const from = useRef("");
-  const to = useRef("");
-  const departure = useRef("");
-  const arrival = useRef("");
-  const date = useRef("");
-  const airport = useRef("");
-  const cabin = useRef("");
-  const nos = useRef("");
+  const fn = useRef('');
+  const from = useRef('');
+  const to = useRef('');
+  const departure = useRef('');
+  const arrival = useRef('');
+  const date = useRef('');
+  const airport = useRef('');
+  const cabin = useRef('');
+  const nos = useRef('');
   useEffect(() => {
     const body = {
        FlightNumber: fn.current.value,
@@ -35,7 +35,7 @@ export default function UpdateFlight() {
     };
     if (confirm){
       console.log(body)
-    axios.post(`http://localhost:8000/flight/update-Flight/:FlightNumber`,body).then(res=> console.log(res)).catch();
+    axios.get(`http://localhost:8000/flight/update-Flight/${fn.current.value}`,body).then(res=> console.log(res)).catch();
     setConfirm(false);
     }
 
