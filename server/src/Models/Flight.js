@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 const flightSchema = new Schema({
   FlightNumber: {
     type: Number,
-    required: true,
+    required: true
     },  
   From: {
     type: String,
-    required: true,
+    required: true
   },
   To: {
     type: String,
@@ -24,13 +24,13 @@ const flightSchema = new Schema({
   },
   AvailableSeats: {
     type: Number,
-    required: true,
+    required: true
   },
   Date: {
     type: String,
     required: true
   },
-  DapartureTime: {
+  DepartureTime: {
     type: String,
     required: true
   },
@@ -39,6 +39,7 @@ const flightSchema = new Schema({
     required: true
   },
 }, { timestamps: true });
+
 mongoose.models = {}
 const Flight = mongoose.model('Flight', flightSchema);
 module.exports = Flight;

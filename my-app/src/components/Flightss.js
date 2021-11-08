@@ -13,15 +13,15 @@ export default function Flightss() {
     // set the flight to be created
     setConfirm(true);
   }
-  const fn = useRef("");
-  const from = useRef("");
-  const to = useRef("");
-  const departure = useRef("");
-  const arrival = useRef("");
-  const date = useRef("");
-  const airport = useRef("");
-  const cabin = useRef("");
-  const nos = useRef("");
+  const fn = useRef('');
+  const from = useRef('');
+  const to = useRef('');
+  const departure = useRef('');
+  const arrival = useRef('');
+  const date = useRef('');
+  const airport = useRef('');
+  const cabin = useRef('');
+  const nos = useRef('');
   useEffect(() => {
     const body = {
        FlightNumber: fn.current.value,
