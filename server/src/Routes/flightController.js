@@ -54,8 +54,8 @@ router.get('/get-all-flights', (req, res) => {
   });
 
   //Updating an existing Flight
-  router.put('/update-Flight/:FlightNumber', (req,res)=>{
-    Flight.findByIdAndUpdate(req.params.id, req.body).then(result =>{
+  router.patch('/update-Flight/:id', (req,res)=>{
+    Flight.updateMany({FlightNumber: req.params.id}, req.body).then(result =>{
 
         res.status(200).send("flight updated ");
         console.log(chalk.bold.blue('The Flight is Updated successfully !'));
@@ -66,9 +66,9 @@ router.get('/get-all-flights', (req, res) => {
   });
 
   //Deleting an existing Flight
-  router.delete('/delete-Flight/:FlightNumber', (req,res)=>{
+  router.delete('/delete-Flight/:id', (req,res)=>{
     console.log("nnnnn");
-    Flight.findByIdAndRemove(req.params.id, req.body).then(result =>{
+    Flight.deleteMany({FlightNumber: req.params.id}).then(result =>{
 
         res.status(200).send("Flight Deleted ");
         console.log(chalk.bold.red("The Flight is deleted successfully !"));

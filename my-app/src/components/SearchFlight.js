@@ -37,7 +37,7 @@ export default function SearchFlight() {
 
     if (confirm){
       console.log(body)
-    axios.get(`http://localhost:8000/search`,body).then(res=> console.log(res)).catch();
+    axios.post(`http://localhost:8000/search`, body).then(res=> console.log(res)).catch();
     axios.get(`http://localhost:8000/search`).then(r => {setFlight(r.data);console.log(r.data)}).catch()
     setConfirm(false);
     }
@@ -117,4 +117,4 @@ export default function SearchFlight() {
     
     
     </div>})
-   )}
+    )}

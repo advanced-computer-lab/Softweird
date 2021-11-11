@@ -35,7 +35,7 @@ export default function UpdateFlight() {
     };
     if (confirm){
       console.log(body)
-    axios.get(`http://localhost:8000/flight/update-Flight/${fn.current.value}`,body).then(res=> console.log(res)).catch();
+    axios.patch(`http://localhost:8000/flight/update-Flight/${body.FlightNumber}`,body).then(res=> console.log(res)).catch();
     setConfirm(false);
     }
 
