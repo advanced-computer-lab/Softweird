@@ -37,7 +37,7 @@ export default function DeleteFlight() {
 
     if (confirm){
       console.log(body)
-    axios.delete(`http://localhost:8000/flight/delete-Flight/${fn.current.value}`,body).then(res=> console.log(res)).catch();
+    axios.delete(`http://localhost:8000/flight/delete-Flight/${body.FlightNumber}`).then(res=> console.log(res)).catch();
     setConfirm(false);
     }
 
