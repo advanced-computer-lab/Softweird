@@ -1,16 +1,16 @@
-import * as React from 'react';
+import * as React from 'react'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import {useState,useEffect,useRef} from 'react';
 import axios from "axios";
 
 
-export default function Flightss() {
-  //const [flight,setFlight] = useState();
+export default function SearchFlight() {
+  const [flight,setFlight] = useState();
   const [confirm,setConfirm] = useState(false);
 
   function handle(){
-    // set the flight to be created
+    // set the flight to be searched for
     setConfirm(true);
   }
   const fn = useRef('');
@@ -37,7 +37,8 @@ export default function Flightss() {
 
     if (confirm){
       console.log(body)
-    axios.post(`http://localhost:8000/flight/create-Flight`,body).then(res=> console.log(res)).catch();
+    axios.post(`http://localhost:8000/search`, body).then(res=> console.log(res)).catch();
+    axios.get(`http://localhost:8000/search`).then(r => {setFlight(r.data);console.log(r.data)}).catch()
     setConfirm(false);
     }
 
@@ -45,10 +46,9 @@ export default function Flightss() {
 
   return (
 
-
     <Box
 
-      component="form"
+      component = "form"
       sx={{
         '& .MuiTextField-root': { m: 2, width: '25ch' },
       }}
@@ -68,12 +68,13 @@ export default function Flightss() {
       
       <label>From: </label>
         <input ref={from} />
+      
         
          <label>To: </label>
         <input
           ref = {to}
         />
-      
+
       <label>DepartureTime: </label>
         <input ref={departure} />
 
@@ -92,14 +93,28 @@ export default function Flightss() {
         <input ref={airport} />
         
       </div>
-      <Button variant="Confirm" disableElevation onClick = {handle}>
-      Confirm
+      <Button variant="Search" disableElevation onClick = {handle}>
+      Search
     </Button>
       
+
     </Box>
+
+   
+   );return (
+    flight.map(a =>{return <div>
+    <label>{a.FlightNumber}</label>
+    <label>{a.From}</label>
+    <label>{a.To}</label>
+    <label>{a.Airport}</label>
+    <label>{a.Cabin}</label>
+    <label>{a.AvailableSeats}</label>
+    <label>{a.Date}</label>
+    <label>{a.DepartureTime}</label>
+    <label>{a.ArrivalTime}</label>
+
     
-
-
-
-  );
-}
+    
+    
+    </div>})
+    )}

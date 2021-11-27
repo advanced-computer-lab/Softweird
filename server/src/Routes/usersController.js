@@ -1,58 +1,66 @@
-const Users = require('../models/Users');
-exports.addUser = (req, res) => {
-    
-    const users = new Users(req.body)
-  
-    users.save()
+var express = require('express');
+var router = express.Router();
+const Users = require('../Models/Users');
+// printing
+const chalk = require('chalk');
+
+//Get all entered users
+router.get('/get-all-users', (req, res) => {
+  Users.find()
+    .then(result => {
+      res.send(result);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
+//Get a certain entered user with a known attribute
+router.get('/get-all-users/:name', (req, res) => {
+    Users.find({Name:req.params.name})
       .then(result => {
         res.send(result);
-        console.log("added");
       })
       .catch(err => {
         console.log(err);
       });
-  };
-// getting all the users
-
-exports.viewUsers = (req, res) => {                                               ``
-    Users.find({})
+  });
+  // creating new user
+  router.post('/create-user', (req, res) => {
+    const newUser = new Users(req.body);
+  
+    newUser.save()
       .then(result => {
-        res.send(result);
+        res.status(200).send(result);
+        console.log(chalk.bold.green("The User is created successfully !"));
       })
       .catch(err => {
         console.log(err);
       });
-    };
+  });
 
-    exports.getUser = (req, res) => {
-      User.find({Name:req.params.name})
-        .then(result => {
-          res.send(result);
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    };
+  //Updating an existing user
+  router.put('/update-user/:id', (req,res)=>{
+    Users.findByIdAndUpdate(req.params.id,req.body).then(result =>{
 
-    exports.updateUser = (req,res)=>{
-      Users.findByIdAndUpdate(req.params.id,req.body).then(result =>{
-  
-          res.status(200).send("User updated ");
-          console.log('The User is Updated successfully !');
-      }).catch(err => {
-          console.log(err);
-        });
-  
-    };
-  
-    //Deleting an existing user
-    exports.deleteUser = (req,res)=>{
-      Users.findByIdAndRemove(req.params.id).then(result =>{
-  
-          res.status(200).send("User Deleted ");
-          console.log("The User is deleted successfully !");
-      }).catch(err => {
-          console.log(err);
-        });
-  
-    };
+        res.status(200).send("User updated ");
+        console.log(chalk.bold.blue('The User is Updated successfully !'));
+    }).catch(err => {
+        console.log(err);
+      });
+
+  });
+
+  //Deleting an existing user
+  router.delete('/delete-user/:id', (req,res)=>{
+    Users.findByIdAndRemove(req.params.id).then(result =>{
+
+        res.status(200).send("User Deleted ");
+        console.log(chalk.bold.red("The User is deleted successfully !"));
+    }).catch(err => {
+        console.log(err);
+      });
+
+  });
+
+  module.exports = router;

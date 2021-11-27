@@ -4,8 +4,7 @@ import Button from '@mui/material/Button';
 import {useState,useEffect,useRef} from 'react';
 import axios from "axios";
 
-
-export default function Flightss() {
+export default function UpdateFlight() {
   //const [flight,setFlight] = useState();
   const [confirm,setConfirm] = useState(false);
 
@@ -32,12 +31,11 @@ export default function Flightss() {
        AvailableSeats: nos.current.value,
        Date: date.current.value,
        DepartureTime: departure.current.value,
-       ArrivalTime: arrival.current.value
+       ArrivalTime: arrival.current.value,
     };
-
     if (confirm){
       console.log(body)
-    axios.post(`http://localhost:8000/flight/create-Flight`,body).then(res=> console.log(res)).catch();
+    axios.patch(`http://localhost:8000/flight/update-Flight/${body.FlightNumber}`,body).then(res=> console.log(res)).catch();
     setConfirm(false);
     }
 
@@ -56,44 +54,45 @@ export default function Flightss() {
       autoComplete="off"
     >
        <div>
-         <label>FlightNumber: </label>
+         <label>Flight Number : </label>
         <input
           ref = {fn}
         />
-        <label>Date: </label>
+        <label>Date : </label>
         <input ref={date} />
         
         
       
       
-      <label>From: </label>
+      <label>From : </label>
         <input ref={from} />
+      
+
         
-         <label>To: </label>
+         <label>To : </label>
         <input
           ref = {to}
         />
       
-      <label>DepartureTime: </label>
+      <label>DepartureTime : </label>
         <input ref={departure} />
-
-        <label>ArrivalTime: </label>
+        <label>ArrivalTime : </label>
         <input ref={arrival} />
       
       
-      <label>Cabin: </label>
+      <label>Cabin : </label>
         <input ref={cabin} />
 
-        <label>AvailableSeats: </label>
+        <label>AvailableSeats : </label>
         <input ref={nos} />
       
       
-      <label>Airport: </label>
+      <label>Airport : </label>
         <input ref={airport} />
         
       </div>
-      <Button variant="Confirm" disableElevation onClick = {handle}>
-      Confirm
+      <Button variant="Update" disableElevation onClick = {handle}>
+      Update
     </Button>
       
     </Box>

@@ -5,12 +5,12 @@ import {useState,useEffect,useRef} from 'react';
 import axios from "axios";
 
 
-export default function Flightss() {
+export default function DeleteFlight() {
   //const [flight,setFlight] = useState();
   const [confirm,setConfirm] = useState(false);
 
   function handle(){
-    // set the flight to be created
+    // set the flight to be deleted
     setConfirm(true);
   }
   const fn = useRef('');
@@ -37,7 +37,7 @@ export default function Flightss() {
 
     if (confirm){
       console.log(body)
-    axios.post(`http://localhost:8000/flight/create-Flight`,body).then(res=> console.log(res)).catch();
+    axios.delete(`http://localhost:8000/flight/delete-Flight/${body.FlightNumber}`).then(res=> console.log(res)).catch();
     setConfirm(false);
     }
 
@@ -92,8 +92,8 @@ export default function Flightss() {
         <input ref={airport} />
         
       </div>
-      <Button variant="Confirm" disableElevation onClick = {handle}>
-      Confirm
+      <Button variant="Delete" disableElevation onClick = {handle}>
+      Delete
     </Button>
       
     </Box>
