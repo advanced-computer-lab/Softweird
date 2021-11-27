@@ -15,15 +15,15 @@ const reservationSchema = new Schema({
     required: true
   },
   DateOfBirth: {
-    type: Number,
+    type: Date,
     required: true,
   },
   PhoneNumber: {
-    type: String,
+    type: Number,
     required: true
   },
   NumberOfBags: {
-    type: String,
+    type: Number,
     required: true
   },
 }, { timestamps: true });

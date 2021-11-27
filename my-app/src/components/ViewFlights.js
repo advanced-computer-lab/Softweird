@@ -23,7 +23,8 @@ export default function ViewFlights() {
     <label>{a.AvailableSeats}</label>
     <label>{a.Date}</label>
     <label>{a.DepartureTime}</label>
-    <label>{a.ArrivalTime}</label></div>})
+    <label>{a.ArrivalTime}</label>
+    </div>})
     
   )
 }

@@ -102,7 +102,7 @@ export default function SearchFlight() {
 
    
    );return (
-    flight.map(a =>{return <div>
+     flight.map(a =>{return <div>
     <label>{a.FlightNumber}</label>
     <label>{a.From}</label>
     <label>{a.To}</label>

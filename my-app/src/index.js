@@ -2,13 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Flightss from './components/Flightss';
 
-import Searchbar from './components/Searchbar';
+
+import Flightss from './components/Flightss';
+import Searchbar from './components/Home';
+import ViewReservation from './components/ViewReservation';
 import ViewFlights from './components/ViewFlights';
 import DeleteFlight from './components/DeleteFlight';
 import UpdateFlight from './components/UpdateFlight';
 import SearchFlight from './components/SearchFlight';
+
+
 ReactDOM.render(
   <React.StrictMode>
  

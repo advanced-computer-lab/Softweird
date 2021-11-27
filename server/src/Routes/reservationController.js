@@ -4,6 +4,18 @@ const Reservation = require('../Models/Reservation');
 
 const chalk = require('chalk');
 
+  //Get all reservations
+  router.get('/get-all-reservations', (req, res) => {
+  
+  Reservation.find()
+    .then(result => {
+      res.send(result);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  });
+
   // creating new Reservation
   router.post('/create-Reservation', (req, res) => {
     const newReservation = new Reservation(req.body);
@@ -11,7 +23,7 @@ const chalk = require('chalk');
     newReservation.save()
       .then(result => {
         res.status(200).send(result);
-        console.log(chalk.bold.green("The Flight is created successfully !"));
+        console.log(chalk.bold.green("The Reservation is created successfully !"));
       })
       .catch(err => {
         console.log(err);
