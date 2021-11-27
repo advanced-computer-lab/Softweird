@@ -16,12 +16,12 @@ export default function ViewReservation() {
     
     l.map(a =>{return <div>
     <label>{a.Name}</label>
-    <label>{a.ID}</label>
-    <label>{a.Email}</label>
-    <label>{a.DateOfBirth}</label>
-    <label>{a.PhoneNumber}</label>
-    <label>{a.NumberOfbags}</label>
-    
+    <label>{a.userID}</label>
+    <label>{a.FlightNumber}</label>
+    <label>{a.From}</label>
+    <label>{a.To}</label>
+    <label>{a.Airport}</label>
+    <label>{a.NumberOfBags}</label>
     </div>})
   )
 }

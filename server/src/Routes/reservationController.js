@@ -16,23 +16,26 @@ const chalk = require('chalk');
     });
   });
 
-  // creating new Reservation
-  router.post('/create-Reservation', (req, res) => {
-    const newReservation = new Reservation(req.body);
-  
-    newReservation.save()
-      .then(result => {
-        res.status(200).send(result);
-        console.log(chalk.bold.green("The Reservation is created successfully !"));
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  });
+// creating new Reservation
+router.post('/create-reservation', (req, res) => {
+  console.log("reservation creation");
+  console.log(req.body);
+  const newReservation = new Reservation(req.body);
 
-  //Updating an existing Reservation
-  router.put('/update-reservation/:id', (req,res)=>{
-    Reservation.findByIDAndUpdate(req.params.ID,req.body).then(result =>{
+  newReservation.save()
+    .then(result => {
+      res.status(200).send(result);
+      console.log(chalk.bold.green("The Reservation is created successfully !"));
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
+   //Updating an existing Reservation
+   router.put('/update-Reservation/:id', (req,res)=>{
+    var id=req.params.id;
+    Reservation.findByIdAndUpdate({id:_id}, req.body).then(result =>{
 
         res.status(200).send("Reservation updated ");
         console.log(chalk.bold.blue('The Reservation is Updated successfully !'));

@@ -37,6 +37,7 @@ router.get('/get-all-flights', (req, res) => {
         console.log(err);
       });
   });
+  
   // creating new Flight
   router.post('/create-Flight', (req, res) => {
     console.log("@@@@@@@@@@@@@@@@@@");

@@ -87,6 +87,8 @@ export default function PrimarySearchAppBar() {
         </Toolbar>
       </AppBar>
     </Box>
+
+
   );
   
 }
