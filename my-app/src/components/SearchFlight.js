@@ -37,8 +37,7 @@ export default function SearchFlight() {
 
     if (confirm){
       console.log(body)
-    axios.post(`http://localhost:8000/search`, body).then(res=> console.log(res)).catch();
-    axios.get(`http://localhost:8000/search`).then(r => {setFlight(r.data);console.log(r.data)}).catch()
+    axios.post(`http://localhost:8000/flight/search`,body).then(res=> console.log(res)).catch();
     setConfirm(false);
     }
 
@@ -101,20 +100,4 @@ export default function SearchFlight() {
     </Box>
 
    
-   );return (
-    flight.map(a =>{return <div>
-    <label>{a.FlightNumber}</label>
-    <label>{a.From}</label>
-    <label>{a.To}</label>
-    <label>{a.Airport}</label>
-    <label>{a.Cabin}</label>
-    <label>{a.AvailableSeats}</label>
-    <label>{a.Date}</label>
-    <label>{a.DepartureTime}</label>
-    <label>{a.ArrivalTime}</label>
-
-    
-    
-    
-    </div>})
-    )}
+   )}

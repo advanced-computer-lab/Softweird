@@ -28,13 +28,17 @@ router.get('/get-all-flights', (req, res) => {
   });
 */
   //search
-  router.get('/search', (req, res) => {
+  router.post('/search', (req, res) => {
+    console.log("enterd search")
     Flight.find(req.body)
       .then(result => {
         res.send(result);
+        console.log(result);
+        alert(result);
       })
       .catch(err => {
         console.log(err);
+        console.log("not found");
       });
   });
   // creating new Flight

@@ -13,6 +13,7 @@ export default function Flightss() {
     // set the flight to be created
     setConfirm(true);
   }
+  const flightnum= document.getElementById("flightnumber");
   const fn = useRef('');
   const from = useRef('');
   const to = useRef('');
@@ -34,6 +35,15 @@ export default function Flightss() {
        DepartureTime: departure.current.value,
        ArrivalTime: arrival.current.value
     };
+    console.log("outside")
+   if(flightnum){
+    console.log("inside if")
+    flightnum.addEventListener('submit', (e)=>{
+      console.log("inside listener")
+     if(body.FlightNumber==="1")
+      e.preventDefault()
+    } )
+   }
 
     if (confirm){
       console.log(body)
@@ -58,7 +68,7 @@ export default function Flightss() {
        <div>
          <label>FlightNumber: </label>
         <input
-          ref = {fn}
+          ref = {fn} id="flightnumber"
         />
         <label>Date: </label>
         <input ref={date} />
@@ -92,7 +102,7 @@ export default function Flightss() {
         <input ref={airport} />
         
       </div>
-      <Button variant="Confirm" disableElevation onClick = {handle}>
+      <Button variant="Confirm" type="submit" disableElevation onClick = {handle}>
       Confirm
     </Button>
       

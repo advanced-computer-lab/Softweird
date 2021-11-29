@@ -11,6 +11,7 @@ export default function DeleteFlight() {
 
   function handle(){
     // set the flight to be deleted
+    alert("are you sure?");
     setConfirm(true);
   }
   const fn = useRef('');
