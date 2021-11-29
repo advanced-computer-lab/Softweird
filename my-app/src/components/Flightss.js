@@ -3,10 +3,17 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import {useState,useEffect,useRef} from 'react';
 import axios from "axios";
-
+import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
+import ReactDOM from "react-dom";
 
 export default function Flightss() {
-  //const [flight,setFlight] = useState();
+  
+  const [name, setName] = React.useState('Cat in the Hat');
+  const handleChange = (event) => {
+    setName(event.target.value);
+  };
+  
   const [confirm,setConfirm] = useState(false);
 
   function handle(){
@@ -44,62 +51,71 @@ export default function Flightss() {
   }, [confirm])
 
   return (
-
-
     <Box
 
       component="form"
       sx={{
-        '& .MuiTextField-root': { m: 2, width: '25ch' },
+        '& .MuiTextField-root': { m: 1.5, width: '25ch' },
       }}
       noValidate
       autoComplete="off"
     >
+    
+
+         Create Flight
        <div>
-         <label>FlightNumber: </label>
-        <input
-          ref = {fn}
-        />
-        <label>Date: </label>
-        <input ref={date} />
-        
-        
-      
-      
-      <label>From: </label>
-        <input ref={from} />
-        
-         <label>To: </label>
-        <input
-          ref = {to}
-        />
-      
-      <label>DepartureTime: </label>
-        <input ref={departure} />
 
-        <label>ArrivalTime: </label>
-        <input ref={arrival} />
+      < TextField
+      label="Flight Number"
+      inputRef={fn}
+      />
+           
+      < TextField
+      label="Date"
+      inputRef={date}
+      />
       
+      < TextField
+      label="From"
+      inputRef={from}
+      />
       
-      <label>Cabin: </label>
-        <input ref={cabin} />
+      < TextField
+      label="To"
+      inputRef={to}
+      />
+      
+      < TextField
+      label="Airport"
+      inputRef={airport}
+      />
 
-        <label>AvailableSeats: </label>
-        <input ref={nos} />
+      < TextField
+      label="Departure Time"
+      inputRef={departure}
+      />
       
+      < TextField
+      label="Arrival Time"
+      inputRef={arrival}
+      />
+
+      < TextField
+      label="Cabin"
+      inputRef={cabin}
+      />
+
+      < TextField
+      label="Available Seats"
+      inputRef={nos}
+      />
       
-      <label>Airport: </label>
-        <input ref={airport} />
-        
       </div>
       <Button variant="Confirm" disableElevation onClick = {handle}>
       Confirm
     </Button>
       
     </Box>
-    
-
-
-
   );
 }
+ReactDOM.render(<Flightss />, document.getElementById('root'));

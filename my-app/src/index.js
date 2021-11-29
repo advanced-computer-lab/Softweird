@@ -14,17 +14,14 @@ import SearchFlight from './components/SearchFlight';
 import UpdateUser from './components/UpdateUser';
 import CancelReservation from './components/CancelReservation';
 
+
 ReactDOM.render(
   <React.StrictMode>
  
     
     <Searchbar/>
-   
-    Create Flight
+
     <Flightss/>
-    
-    All reservations
-    <ViewReservation/>
 
     Cancel Reservation
     <CancelReservation/>
@@ -41,6 +38,9 @@ ReactDOM.render(
     Search For A Flight
     <SearchFlight/>
     
+    All reservations
+     <ViewReservation/>
+
     Update user
     <UpdateUser/>
     

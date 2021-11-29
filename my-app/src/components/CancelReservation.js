@@ -4,6 +4,11 @@ import Button from '@mui/material/Button';
 import {useState,useEffect,useRef} from 'react';
 import axios from "axios";
 
+import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
+
+
+
 
 export default function CancelReservation() {
   //const [flight,setFlight] = useState();
@@ -40,8 +45,28 @@ export default function CancelReservation() {
   }, [confirm])
 
   return (
+ 
+    <Stack
+      component="form"
+      sx={{
+        width: '25ch',
+      }}
+      spacing={2}
+      noValidate
+      autoComplete="off"
+    >
+      
+      <TextField
+        hiddenLabel
+        id="filled-hidden-label-normal"
+        defaultValue=" "
+        variant="filled"
+        input ref ={fnumber}
+      />
+    </Stack>
 
 
+    /*
     <Box
 
       component="form"
@@ -80,7 +105,7 @@ export default function CancelReservation() {
       
     </Box>
     
-
+   */
 
 
   );
