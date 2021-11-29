@@ -72,7 +72,7 @@ export default function PrimarySearchAppBar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            Flights
+            AirLines
           </Typography>
           <Search>
             <SearchIconWrapper>

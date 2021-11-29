@@ -12,6 +12,7 @@ import DeleteFlight from './components/DeleteFlight';
 import UpdateFlight from './components/UpdateFlight';
 import SearchFlight from './components/SearchFlight';
 import UpdateUser from './components/UpdateUser';
+import CancelReservation from './components/CancelReservation';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -24,6 +25,9 @@ ReactDOM.render(
     
     All reservations
     <ViewReservation/>
+
+    Cancel Reservation
+    <CancelReservation/>
 
     All Flights
     <ViewFlights/>
