@@ -44,17 +44,17 @@ export default function UpdateFlight() {
   }, [confirm])
 
   return (
-
+ 
 
     <Box
-
+      
       component="form"
       sx={{
         '& .MuiTextField-root': { m: 1, width: '25ch' },
       }}
       noValidate
       autoComplete="off"
-    >
+    > Update Flight
        <div>
        < TextField
       label="Flight Number"

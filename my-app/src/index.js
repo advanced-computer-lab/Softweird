@@ -3,6 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
+//import * as serviceWorker from "./serviceWorker";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  Navigation,
+  Footer,
+  Home,
+  About,
+  Flights,
+  Posts,
+  Post,
+} from "./components/Index";
+
 
 import Flightss from './components/Flightss';
 import Searchbar from './components/Home';
@@ -18,34 +30,20 @@ import CancelReservation from './components/CancelReservation';
 ReactDOM.render(
   <React.StrictMode>
  
-    
-    <Searchbar/>
+ <Router>
+    <Navigation />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/About" element={<Flightss />} />
+      <Route path="/Contact" element={<UpdateFlight />} />
+      <Route path="/blog" element={<Flights />}>
+        <Route path="" element={<Posts />} />
+        <Route path=":postSlug" element={<Post />} />
+      </Route>
+    </Routes>
+    <Footer />
+  </Router>,
 
-    <Flightss/>
-
-     Cancel Reservation 
-    <CancelReservation/>
-
-
-    All Flights
-    <ViewFlights/>
-    
-
-    Delete Flight
-    <DeleteFlight/>
-   
-    Update Flight
-    <UpdateFlight/>
-   
-    Search For A Flight
-    <SearchFlight/>
-    
-    All reservations
-     <ViewReservation/>
-
-    Update user
-    <UpdateUser/>
-    
   </React.StrictMode>,
   document.getElementById('root')
 );
