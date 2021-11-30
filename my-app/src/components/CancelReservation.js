@@ -7,11 +7,16 @@ import axios from "axios";
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 
+const chalk = require('chalk');
+
 
 
 
 export default function CancelReservation() {
   //const [flight,setFlight] = useState();
+
+  
+
   const [confirm,setConfirm] = useState(false);
 
   function handle(){
@@ -45,68 +50,58 @@ export default function CancelReservation() {
   }, [confirm])
 
   return (
- 
-    <Stack
-      component="form"
-      sx={{
-        width: '25ch',
-      }}
-      spacing={2}
-      noValidate
-      autoComplete="off"
-    >
-      
-      <TextField
-        hiddenLabel
-        id="filled-hidden-label-normal"
-        defaultValue=" "
-        variant="filled"
-        input ref ={fnumber}
-      />
-    </Stack>
 
-
-    /*
     <Box
 
       component="form"
       sx={{
-        '& .MuiTextField-root': { m: 2, width: '25ch' },
+        '& .MuiTextField-root': { m: 1, width: '25ch' },
       }}
       noValidate
       autoComplete="off"
     >
        <div>
-         <label>Name: </label>
-        <input ref = {name} />
+       < TextField
+      label="Name"
+      inputRef={name}
+      />
 
-        <label>userID: </label>
-        <input ref={id} />
-      
-        <label>FlightNumber: </label>
-        <input ref={fnumber} />
-        
-        <label>From: </label>
-        <input ref = {from}  />
-      
-        <label>To: </label>
-        <input ref={to} />
+      < TextField
+      label="User ID"
+      inputRef={id}
+      />
 
-        <label>Airport: </label>
-        <input ref={airport} />
-      
-        <label>NumberOfBags: </label>
-        <input ref={bags} />
-        
+        < TextField
+      label="Flight Number"
+      inputRef={fnumber}
+      />
+
+       < TextField
+      label="From"
+      inputRef={from}
+      />
+
+      < TextField
+      label="To"
+      inputRef={to}
+      />
+
+      < TextField
+      label="Airport"
+      inputRef={airport}
+      />
+
+      < TextField
+      label="Number of Bags"
+      inputRef={bags}
+      />
+
       </div>
-      <Button variant="Delete" disableElevation onClick = {handle}>
-      Cancel Reservation
-    </Button>
+      <Button 
+       variant="outlined" size="medium" color="error"  disableElevation onClick = {handle}>
+      </Button>
       
     </Box>
-    
-   */
-
 
   );
 }

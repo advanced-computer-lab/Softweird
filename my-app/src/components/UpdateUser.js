@@ -3,6 +3,8 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import {useState,useEffect,useRef} from 'react';
 import axios from "axios";
+import TextField from '@mui/material/TextField';
+import ReactDOM from "react-dom";
 
 export default function UpdateUser() {
   //const [flight,setFlight] = useState();
@@ -45,28 +47,26 @@ export default function UpdateUser() {
       autoComplete="off"
     >
        <div>
-         <label>First Name : </label>
-        <input
-          ref = {fname}
-        />
-
-         <label>Last Name : </label>
-        <input
-          ref={lname} 
-        />
+       < TextField
+      label="First Name "
+      inputRef={fname}
+      />
+      < TextField
+      label="Last Name"
+      inputRef={lname}
+      />
       
-         <label>Passport Number : </label>
-        <input 
-          ref={passnumber} 
-        />
-      
-         <label>Email : </label>
-        <input
-          ref = {email}
-        />
+      < TextField
+      label="Passport Number"
+      inputRef={passnumber}
+      />
+      < TextField
+      label="Email"
+      inputRef={email}
+      />
       
       </div>
-      <Button variant="Update" disableElevation onClick = {handle}>
+      <Button variant="outlined" size="medium" color="success" disableElevation onClick = {handle}>
       Update User Info
     </Button>
       
@@ -74,3 +74,4 @@ export default function UpdateUser() {
     
   );
 }
+ReactDOM.render(<UpdateUser />, document.getElementById('root'));

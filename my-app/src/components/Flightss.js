@@ -111,10 +111,10 @@ export default function Flightss() {
       />
       
       </div>
-      <Button variant="Confirm" disableElevation onClick = {handle}>
+      <Button variant="contained" color="success" disableElevation onClick = {handle}>
       Confirm
     </Button>
-      
+    
     </Box>
   );
 }

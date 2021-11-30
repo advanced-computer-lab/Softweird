@@ -23,12 +23,14 @@ ReactDOM.render(
 
     <Flightss/>
 
-    Cancel Reservation
+     Cancel Reservation 
     <CancelReservation/>
+
 
     All Flights
     <ViewFlights/>
     
+
     Delete Flight
     <DeleteFlight/>
    
