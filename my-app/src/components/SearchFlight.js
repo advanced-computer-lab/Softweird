@@ -3,7 +3,8 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import {useState,useEffect,useRef} from 'react';
 import axios from "axios";
-
+import TextField from '@mui/material/TextField';
+import ReactDOM from "react-dom";
 
 export default function SearchFlight() {
   const [flight,setFlight] = useState();
@@ -56,44 +57,45 @@ export default function SearchFlight() {
       autoComplete="off"
     >
        <div>
-         <label>FlightNumber: </label>
-        <input
-          ref = {fn}
-        />
-        <label>Date: </label>
-        <input ref={date} />
-        
-        
-      
-      
-      <label>From: </label>
-        <input ref={from} />
-      
-        
-         <label>To: </label>
-        <input
-          ref = {to}
-        />
-
-      <label>DepartureTime: </label>
-        <input ref={departure} />
-
-        <label>ArrivalTime: </label>
-        <input ref={arrival} />
-      
-      
-      <label>Cabin: </label>
-        <input ref={cabin} />
-
-        <label>AvailableSeats: </label>
-        <input ref={nos} />
-      
-      
-      <label>Airport: </label>
-        <input ref={airport} />
+       < TextField
+      label="Flight Number"
+      inputRef={fn}
+      />
+      < TextField
+      label="Date"
+      inputRef={date}
+      />
+      < TextField
+      label="From"
+      inputRef={from}
+      />
+        < TextField
+      label="To"
+      inputRef={to}
+      />
+      < TextField
+      label="Airport"
+      inputRef={airport}
+      />
+      < TextField
+      label="Departure Time"
+      inputRef={departure}
+      />
+      < TextField
+      label="Arrival Time"
+      inputRef={arrival}
+      />
+      < TextField
+      label="Cabin"
+      inputRef={cabin}
+      />
+       < TextField
+      label="Available Seats"
+      inputRef={nos}
+      />
         
       </div>
-      <Button variant="Search" disableElevation onClick = {handle}>
+      <Button variant="outlined" disableElevation onClick = {handle}>
       Search
     </Button>
       
@@ -102,7 +104,7 @@ export default function SearchFlight() {
 
    
    );return (
-    flight.map(a =>{return <div>
+     flight.map(a =>{return <div>
     <label>{a.FlightNumber}</label>
     <label>{a.From}</label>
     <label>{a.To}</label>
@@ -118,3 +120,4 @@ export default function SearchFlight() {
     
     </div>})
    )}
+   ReactDOM.render(<SearchFlight />, document.getElementById('root'));

@@ -37,6 +37,7 @@ router.get('/get-all-flights', (req, res) => {
         console.log(err);
       });
   });
+  
   // creating new Flight
   router.post('/create-Flight', (req, res) => {
     console.log("@@@@@@@@@@@@@@@@@@");
@@ -54,8 +55,9 @@ router.get('/get-all-flights', (req, res) => {
   });
 
   //Updating an existing Flight
-  router.put('/update-Flight/:FlightNumber', (req,res)=>{
-    Flight.findByIdAndUpdate(req.params.id, req.body).then(result =>{
+  router.put('/update-Flight/:id', (req,res)=>{
+    var id=req.params.id;
+    Flight.findByIdAndUpdate({id:_id}, req.body).then(result =>{
 
         res.status(200).send("flight updated ");
         console.log(chalk.bold.blue('The Flight is Updated successfully !'));

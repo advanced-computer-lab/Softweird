@@ -4,11 +4,11 @@ const mongoose = require('mongoose');
 
 const {MongoURI} = require('../src/config/db');
 const app = express();
-const port = process.env.PORT || "8000";
+const port = process.env.PORT || "8001";
 const chalk = require('chalk');
 const cors = require('cors')
 
-const usersController = require('./Routes/usersController');
+const userController = require('./Routes/userController');
 const flightController = require('./Routes/flightController');
 const reservationController = require('./Routes/reservationController');
 const adminController = require('./Routes/adminController');
@@ -25,7 +25,7 @@ mongoose.connect(MongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 app.use(cors())
 
-app.use('/user' , usersController);
+app.use('/user' , userController);
 app.use('/admin' , adminController);
 app.use('/flight' , flightController);
 app.use('/reservation' , reservationController);

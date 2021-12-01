@@ -6,27 +6,32 @@ const reservationSchema = new Schema({
     type: String,
     required: true,
   },
-  ID: {
+  userID: {
     type: String,
     required: true
   },
-  Email: {
+  FlightNumber: {
+    type:   String,
+    required: true
+  },
+  From: {
     type: String,
     required: true
   },
-  DateOfBirth: {
-    type: Number,
-    required: true,
+  To: {
+    type: String,
+    required: true
   },
-  PhoneNumber: {
+  Airport: {
     type: String,
     required: true
   },
   NumberOfBags: {
-    type: String,
+    type: Number,
     required: true
   },
 }, { timestamps: true });
+
 mongoose.models = {}
 const Reservation = mongoose.model('Reservation', reservationSchema);
 module.exports = Reservation;

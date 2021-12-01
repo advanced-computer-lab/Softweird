@@ -53,16 +53,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function PrimarySearchAppBar() {
   
-
-
-  
-
- 
-
-
-
-
-  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -82,7 +72,7 @@ export default function PrimarySearchAppBar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            Flights
+            AirLines
           </Typography>
           <Search>
             <SearchIconWrapper>
@@ -97,6 +87,8 @@ export default function PrimarySearchAppBar() {
         </Toolbar>
       </AppBar>
     </Box>
+
+
   );
   
 }

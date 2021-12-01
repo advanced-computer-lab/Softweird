@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
-const Users = require('../Models/Users');
+const User = require('../Models/User');
 // printing
 const chalk = require('chalk');
 
 //Get all entered users
 router.get('/get-all-users', (req, res) => {
-  Users.find()
+  User.find()
     .then(result => {
       res.send(result);
     })
@@ -16,8 +16,8 @@ router.get('/get-all-users', (req, res) => {
 });
 
 //Get a certain entered user with a known attribute
-router.get('/get-all-users/:name', (req, res) => {
-    Users.find({Name:req.params.name})
+  /*router.get('/get-all-users/:passport', (req, res) => {
+    User.find({PassportNumber:req.params.passport})
       .then(result => {
         res.send(result);
       })
@@ -25,9 +25,11 @@ router.get('/get-all-users/:name', (req, res) => {
         console.log(err);
       });
   });
+  */
+
   // creating new user
   router.post('/create-user', (req, res) => {
-    const newUser = new Users(req.body);
+    const newUser = new User(req.body);
   
     newUser.save()
       .then(result => {
@@ -40,11 +42,12 @@ router.get('/get-all-users/:name', (req, res) => {
   });
 
   //Updating an existing user
-  router.put('/update-user/:id', (req,res)=>{
-    Users.findByIdAndUpdate(req.params.id,req.body).then(result =>{
+  router.put('/update-User/:id', (req,res)=>{
+    var id=req.params.id;
+    User.findByIdAndUpdate({id:_id}, req.body).then(result =>{
 
-        res.status(200).send("User updated ");
-        console.log(chalk.bold.blue('The User is Updated successfully !'));
+        res.status(200).send("Information updated ");
+        console.log(chalk.bold.blue('The information is Updated successfully !'));
     }).catch(err => {
         console.log(err);
       });
@@ -53,7 +56,7 @@ router.get('/get-all-users/:name', (req, res) => {
 
   //Deleting an existing user
   router.delete('/delete-user/:id', (req,res)=>{
-    Users.findByIdAndRemove(req.params.id).then(result =>{
+    User.findByIdAndRemove(req.params.id).then(result =>{
 
         res.status(200).send("User Deleted ");
         console.log(chalk.bold.red("The User is deleted successfully !"));

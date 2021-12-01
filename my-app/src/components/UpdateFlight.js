@@ -3,6 +3,8 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import {useState,useEffect,useRef} from 'react';
 import axios from "axios";
+import TextField from '@mui/material/TextField';
+import ReactDOM from "react-dom";
 
 export default function UpdateFlight() {
   //const [flight,setFlight] = useState();
@@ -42,56 +44,57 @@ export default function UpdateFlight() {
   }, [confirm])
 
   return (
-
+ 
 
     <Box
-
+      
       component="form"
       sx={{
-        '& .MuiTextField-root': { m: 2, width: '25ch' },
+        '& .MuiTextField-root': { m: 1, width: '25ch' },
       }}
       noValidate
       autoComplete="off"
-    >
+    > Update Flight
        <div>
-         <label>Flight Number : </label>
-        <input
-          ref = {fn}
-        />
-        <label>Date : </label>
-        <input ref={date} />
-        
-        
-      
-      
-      <label>From : </label>
-        <input ref={from} />
-      
-
-        
-         <label>To : </label>
-        <input
-          ref = {to}
-        />
-      
-      <label>DepartureTime : </label>
-        <input ref={departure} />
-        <label>ArrivalTime : </label>
-        <input ref={arrival} />
-      
-      
-      <label>Cabin : </label>
-        <input ref={cabin} />
-
-        <label>AvailableSeats : </label>
-        <input ref={nos} />
-      
-      
-      <label>Airport : </label>
-        <input ref={airport} />
-        
+       < TextField
+      label="Flight Number"
+      inputRef={fn}
+      />
+      < TextField
+      label="Date"
+      inputRef={date}
+      />
+      < TextField
+      label="From"
+      inputRef={from}
+      />
+        < TextField
+      label="To"
+      inputRef={to}
+      />
+      < TextField
+      label="Airport"
+      inputRef={airport}
+      />
+      < TextField
+      label="Departure Time"
+      inputRef={departure}
+      />
+      < TextField
+      label="Arrival Time"
+      inputRef={arrival}
+      />
+      < TextField
+      label="Cabin"
+      inputRef={cabin}
+      />
+       < TextField
+      label="Available Seats"
+      inputRef={nos}
+      />
+    
       </div>
-      <Button variant="Update" disableElevation onClick = {handle}>
+      <Button variant="contained" color="success" disableElevation onClick = {handle}>
       Update
     </Button>
       
@@ -102,3 +105,4 @@ export default function UpdateFlight() {
 
   );
 }
+ReactDOM.render(<UpdateFlight />, document.getElementById('root'));
