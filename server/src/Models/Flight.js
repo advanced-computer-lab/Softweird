@@ -14,7 +14,11 @@ const flightSchema = new Schema({
     type: String,
     required: true
   },
-  Airport: {
+  DepartureAirport: {
+    type: String,
+    required: true
+  },
+  ArrivalAirport: {
     type: String,
     required: true
   },
@@ -38,6 +42,18 @@ const flightSchema = new Schema({
     type: String,
     required: true
   },
+  TripDuration: {
+    type: String,
+    required: true
+  },
+  BaggageAllowance: {
+    type: Number,
+    required: true
+  },
+  Price: {
+    type: Number,
+    required: true
+  }
 }, { timestamps: true });
 
 mongoose.models = {}
