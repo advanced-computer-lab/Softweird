@@ -15,13 +15,13 @@ import CancelReservation from './components/CancelReservation';
 import App from './App'
 import { BrowserRouter as Router, Route,Routes} from "react-router-dom";
 
-import {Footer} from "./components/Index";
+import {Footer,Header} from "./components/Index";
 
 ReactDOM.render(
   <React.StrictMode>
  
  <Router>
-
+  <Header/>
   <App/>
    <Footer/>
   </Router>,

@@ -18,10 +18,10 @@ function App() {
   return (
     <div className="App">
     
-      <Searchbar/>
+      
       <Navigation/>
       <Routes>
-      <Route exact path ="/" element={<Home/>}/>
+      
       <Route exact path ="/Flightss" element={<Flightss/>}/>
       <Route exact path ="/UpdateFlight" element={<UpdateFlight/>}/>
       <Route exact path ="/DeleteFlight" element={<DeleteFlight/>}/>

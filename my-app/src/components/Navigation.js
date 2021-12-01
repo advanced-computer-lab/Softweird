@@ -5,9 +5,7 @@ function Navigation(){
 
     return(
         <ul>
-            <li>
-                 <Link to="/">Home</Link>
-            </li>
+           
             <li>
                  <Link to="/Flightss">Create Flight</Link>
             </li>
