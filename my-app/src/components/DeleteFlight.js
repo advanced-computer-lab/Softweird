@@ -94,7 +94,8 @@ export default function DeleteFlight() {
       inputRef={nos}
       />
       </div>
-      <Button variant="contained" size="medium" color="error" disableElevation onClick = {handle}>
+      <Button
+       variant="contained" size="medium" color="error" disableElevation onClick = {handle}>
       Delete
     </Button>
       

@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const {MongoURI} = require('../src/config/db');
 const app = express();
-const port = process.env.PORT || "8000";
+const port = process.env.PORT || "8001";
 const chalk = require('chalk');
 const cors = require('cors')
 

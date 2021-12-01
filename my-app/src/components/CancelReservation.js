@@ -55,7 +55,7 @@ export default function CancelReservation() {
 
       component="form"
       sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
+        '& .MuiTextField-root': { m: 2, width: '25ch' },
       }}
       noValidate
       autoComplete="off"
@@ -98,7 +98,8 @@ export default function CancelReservation() {
 
       </div>
       <Button 
-       variant="outlined" size="medium" color="error"  disableElevation onClick = {handle}>
+       variant="contained" size="medium" color="error"  disableElevation onClick = {handle}>
+         Cancel
       </Button>
       
     </Box>
