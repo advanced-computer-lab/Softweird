@@ -26,20 +26,28 @@ export default function Flightss() {
   const departure = useRef('');
   const arrival = useRef('');
   const date = useRef('');
-  const airport = useRef('');
+  const depairport = useRef('');
+  const arrairport = useRef('');
   const cabin = useRef('');
   const nos = useRef('');
+  const flightduration = useRef('');
+  const baggageallowance = useRef('');
+  const price = useRef('');
   useEffect(() => {
     const body = {
        FlightNumber: fn.current.value,
        From: from.current.value,
        To: to.current.value,
-       Airport: airport.current.value,
+       DepartureAirport: depairport.current.value,
+       ArrivalAirport: arrairport.current.value,
        Cabin: cabin.current.value,
        AvailableSeats: nos.current.value,
        Date: date.current.value,
        DepartureTime: departure.current.value,
-       ArrivalTime: arrival.current.value
+       ArrivalTime: arrival.current.value,
+       TripDuration: flightduration.current.value,
+       BaggageAllowance: baggageallowance.current.value,
+       Price: price.current.value,
     };
 
     if (confirm){
@@ -86,8 +94,12 @@ export default function Flightss() {
       />
       
       < TextField
-      label="Airport"
-      inputRef={airport}
+      label="Departure Airport"
+      inputRef={depairport}
+      />
+       < TextField
+      label="Arrival Airport"
+      inputRef={arrairport}
       />
 
       < TextField
@@ -108,6 +120,19 @@ export default function Flightss() {
       < TextField
       label="Available Seats"
       inputRef={nos}
+      />
+
+     < TextField
+      label="Trip Duration"
+      inputRef={flightduration}
+      />
+      < TextField
+      label="Allowed Baggage"
+      inputRef={baggageallowance}
+      />
+         < TextField
+      label="Price"
+      inputRef={price}
       />
       
       </div>

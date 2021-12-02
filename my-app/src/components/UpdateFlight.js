@@ -15,8 +15,6 @@ export default function UpdateFlight() {
     setConfirm(true);
   }
   const fn = useRef('');
-  const from = useRef('');
-  const to = useRef('');
   const departure = useRef('');
   const arrival = useRef('');
   const date = useRef('');
@@ -26,8 +24,6 @@ export default function UpdateFlight() {
   useEffect(() => {
     const body = {
        FlightNumber: fn.current.value,
-       From: from.current.value,
-       To: to.current.value,
        Airport: airport.current.value,
        Cabin: cabin.current.value,
        AvailableSeats: nos.current.value,
@@ -63,14 +59,6 @@ export default function UpdateFlight() {
       < TextField
       label="Date"
       inputRef={date}
-      />
-      < TextField
-      label="From"
-      inputRef={from}
-      />
-        < TextField
-      label="To"
-      inputRef={to}
       />
       < TextField
       label="Airport"

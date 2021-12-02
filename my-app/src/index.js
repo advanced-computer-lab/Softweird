@@ -13,6 +13,8 @@ import SearchFlight from './components/SearchFlight';
 import UpdateUser from './components/UpdateUser';
 import CancelReservation from './components/CancelReservation';
 import App from './App'
+import User from './User'
+import Guest from './Guest'
 import { BrowserRouter as Router, Route,Routes} from "react-router-dom";
 
 import {Footer,Header} from "./components/Index";

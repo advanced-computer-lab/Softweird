@@ -14,31 +14,34 @@ export default function SearchFlight() {
     // set the flight to be searched for
     setConfirm(true);
   }
-  const fn = useRef('');
-  const departure = useRef('');
-  const arrival = useRef('');
-  const date = useRef('');
   const depairport = useRef('');
   const arrairport = useRef('');
+  const cabin = useRef('');
+  const availableseats = useRef('');
+  const departure = useRef('');
+  const arrival = useRef('');
+ 
+ 
+  
  
   useEffect(() => {
     const body = {};
 
-    if(fn.current.value != "")
-    {
-      body["FlightNumber"] = fn.current.value;
-    }
     if(depairport.current.value != "")
     {
       body["DepartureAirport"] = depairport.current.value;
     }
     if(arrairport.current.value != "")
     {
-      body["ArrivalAirport"] = arrairport.current.value;
+        body["ArrivalAirport"] = arrairport.current.value;
     }
-    if(date.current.value != "")
+    if(cabin.current.value != "")
     {
-      body["Date"] = date.current.value;
+        body["Cabin"] = cabin.current.value;
+    }
+    if(availableseats.current.value != "")
+    {
+        body["AvailableSeats"] = availableseats.current.value;
     }
     if(departure.current.value != "")
     {
@@ -69,14 +72,7 @@ export default function SearchFlight() {
       autoComplete="off"
     >
        <div>
-       < TextField
-      label="Flight Number"
-      inputRef={fn}
-      />
-      < TextField
-      label="Date"
-      inputRef={date}
-      />
+       
       < TextField
       label="Departure Airport"
       inputRef={depairport}
@@ -84,6 +80,14 @@ export default function SearchFlight() {
       < TextField
       label="Arrival Airport"
       inputRef={arrairport}
+      />
+      < TextField
+      label="Cabin"
+      inputRef={cabin}
+      />
+      < TextField
+      label="Available Seats"
+      inputRef={availableseats}
       />
       < TextField
       label="Departure Time"
