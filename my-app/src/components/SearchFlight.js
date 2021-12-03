@@ -51,7 +51,7 @@ export default function SearchFlight() {
 
     if (confirm){
       console.log(body)
-    axios.get(`http://localhost:8000/flight/search`,body).then(res=> {setFlight(res.data);console.log(res.data)}).catch();
+    axios.post(`http://localhost:8000/flight/search`,body).then(res=> {setFlight(res.data);console.log(res.data)}).catch();
     setConfirm(false);
     }
 

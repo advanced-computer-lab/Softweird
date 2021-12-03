@@ -42,12 +42,11 @@ router.get('/get-all-users', (req, res) => {
   });
 
   //Updating an existing user
-  router.put('/update-User/:id', (req,res)=>{
-    var id=req.params.id;
-    User.findByIdAndUpdate({id:_id}, req.body).then(result =>{
+  router.patch('/update-User/:id', (req,res)=>{
+    User.updateMany({FirstName: req.params.id}, req.body).then(result =>{
 
-        res.status(200).send("Information updated ");
-        console.log(chalk.bold.blue('The information is Updated successfully !'));
+        res.status(200).send("User updated ");
+        console.log(chalk.bold.blue('The User is Updated successfully !'));
     }).catch(err => {
         console.log(err);
       });

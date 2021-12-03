@@ -20,15 +20,26 @@ export default function UpdateUser() {
   const email = useRef('');
   
   useEffect(() => {
-    const body = {
-       FirstName: fname.current.value,
-       LastName: lname.current.value,
-       PassportNumber: passnumber.current.value,
-       Email: email.current.value
-    };
+    const body = {};
+    if(fname.current.value != "")
+    {
+      body["FirstName"] = fname.current.value;
+    }
+    if(lname.current.value != "")
+    {
+      body["LastName"] = lname.current.value;
+    }
+    if(passnumber.current.value != "")
+    {
+      body["PassportNumber"] = passnumber.current.value;
+    }
+    if(email.current.value != "")
+    {
+      body["Email"] = email.current.value;
+    }
     if (confirm){
       console.log(body)
-    axios.get(`http://localhost:8000/user/update-User/${passnumber.current.value}`,body).then(res=> console.log(res)).catch();
+    axios.patch(`http://localhost:8000/user/update-User/${fname.current.value}`,body).then(res=> console.log(res)).catch();
     setConfirm(false);
     }
 

@@ -20,21 +20,53 @@ export default function DeleteFlight() {
   const departure = useRef('');
   const arrival = useRef('');
   const date = useRef('');
-  const airport = useRef('');
+  const depairport = useRef('');
+  const arrairport = useRef('');
   const cabin = useRef('');
   const nos = useRef('');
   useEffect(() => {
-    const body = {
-       FlightNumber: fn.current.value,
-       From: from.current.value,
-       To: to.current.value,
-       Airport: airport.current.value,
-       Cabin: cabin.current.value,
-       AvailableSeats: nos.current.value,
-       Date: date.current.value,
-       DepartureTime: departure.current.value,
-       ArrivalTime: arrival.current.value
-    };
+    const body = {};
+    
+    if(fn.current.value != "")
+    {
+      body["FlightNumber"] = fn.current.value;
+    }
+    if(from.current.value != "")
+    {
+      body["From"] = from.current.value;
+    }
+    if(to.current.value != "")
+    {
+      body["To"] = to.current.value;
+    }
+    if(depairport.current.value != "")
+    {
+      body["DepartureAirport"] = depairport.current.value;
+    }
+    if(arrairport.current.value != "")
+    {
+      body["ArrivalAirport"] = arrairport.current.value;
+    }
+    if(cabin.current.value != "")
+    {
+      body["Cabin"] = cabin.current.value;
+    }
+    if(nos.current.value != "")
+    {
+      body["AvailableSeats"] = nos.current.value;
+    }
+    if(date.current.value != "")
+    {
+      body["Date"] = date.current.value;
+    }
+    if(departure.current.value != "")
+    {
+      body["DepartureTime"] = departure.current.value;
+    }
+    if(arrival.current.value != "")
+    {
+      body["ArrivalTime"] = arrival.current.value;
+    }
 
     if (confirm){
       console.log(body)
@@ -74,8 +106,12 @@ export default function DeleteFlight() {
       inputRef={to}
       />
       < TextField
-      label="Airport"
-      inputRef={airport}
+      label="Departure Airport"
+      inputRef={depairport}
+      />
+            < TextField
+      label="Arrival Airport"
+      inputRef={arrairport}
       />
       < TextField
       label="Departure Time"
