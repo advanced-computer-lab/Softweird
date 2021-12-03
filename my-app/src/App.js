@@ -27,9 +27,7 @@ function App() {
       <Route exact path ="/DeleteFlight" element={<DeleteFlight/>}/>
       <Route exact path ="/ViewFlights" element={<ViewFlights/>}/>
       <Route exact path ="/SearchFlight" element={<SearchFlight/>}/>
-      <Route exact path ="/UpdateUser" element={<UpdateUser/>}/>
-      <Route exact path ="/CancelReservation" element={<CancelReservation/>}/>
-      <Route exact path ="/ViewReservation" element={<ViewReservation/>}/>
+     
      
       </Routes>
     </div>

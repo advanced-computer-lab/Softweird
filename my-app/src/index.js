@@ -28,7 +28,7 @@ ReactDOM.render(
  
  <Router>
   <Header/>
-  <UserGuestSearch/>
+  <App/>
    <Footer/>
   </Router>,
 
