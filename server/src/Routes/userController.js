@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
 const User = require('../Models/User');
-// printing
+
 const chalk = require('chalk');
 
-//Get all entered users
+//Get all entered Users
 router.get('/get-all-users', (req, res) => {
+  
   User.find()
     .then(result => {
       res.send(result);
@@ -16,8 +17,8 @@ router.get('/get-all-users', (req, res) => {
 });
 
 //Get a certain entered user with a known attribute
-  /*router.get('/get-all-users/:passport', (req, res) => {
-    User.find({PassportNumber:req.params.passport})
+/*router.get('/get-all-user/:id', (req, res) => {
+    User.find({id:req.params.id})
       .then(result => {
         res.send(result);
       })
@@ -25,10 +26,22 @@ router.get('/get-all-users', (req, res) => {
         console.log(err);
       });
   });
-  */
-
-  // creating new user
+*/
+  //search
+  router.post('/search', (req, res) => {
+    User.find(req.body)
+      .then(result => {
+        res.send(result);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  });
+  
+  // creating new Flight
   router.post('/create-user', (req, res) => {
+    console.log("@@@@@@@@@@@@@@@@@@");
+    console.log(req.body);
     const newUser = new User(req.body);
   
     newUser.save()
@@ -41,9 +54,9 @@ router.get('/get-all-users', (req, res) => {
       });
   });
 
-  //Updating an existing user
+  //Updating an existing User
   router.patch('/update-User/:id', (req,res)=>{
-    User.updateMany({FirstName: req.params.id}, req.body).then(result =>{
+    User.updateMany({id: req.params.id}, req.body).then(result =>{
 
         res.status(200).send("User updated ");
         console.log(chalk.bold.blue('The User is Updated successfully !'));
@@ -53,9 +66,10 @@ router.get('/get-all-users', (req, res) => {
 
   });
 
-  //Deleting an existing user
+  //Deleting an existing User
   router.delete('/delete-user/:id', (req,res)=>{
-    User.findByIdAndRemove(req.params.id).then(result =>{
+    console.log("nnnnn");
+    User.deleteMany(req.params.id, req.body).then(result =>{
 
         res.status(200).send("User Deleted ");
         console.log(chalk.bold.red("The User is deleted successfully !"));

@@ -46,8 +46,8 @@ export default function SearchFlight() {
     if (confirm){
       console.log(bodyD);
       console.log(bodyR)
-    axios.get(`http://localhost:8000/flight/search`,bodyD).then(res=> {setFlightD(res.data);console.log(res.data)}).catch();
-    axios.get(`http://localhost:8000/flight/search`,bodyR).then(res=> {setFlightR(res.data);console.log(res.data)}).catch();
+    axios.post(`http://localhost:8000/flight/search`,bodyD).then(res=> {setFlightD(res.data);console.log(res.data)}).catch();
+    axios.post(`http://localhost:8000/flight/search`,bodyR).then(res=> {setFlightR(res.data);console.log(res.data)}).catch();
     setConfirm(false);
     }
 

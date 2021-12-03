@@ -13,14 +13,14 @@ const chalk = require('chalk');
 
 
 export default function CancelReservation() {
-  //const [flight,setFlight] = useState();
+  //const [reservation, setReservation] = useState();
 
   
 
   const [confirm,setConfirm] = useState(false);
 
   function handle(){
-    // set the flight to be deleted
+    // set the reservation to be deleted
     setConfirm(true);
   }
   const name = useRef('');
@@ -28,23 +28,38 @@ export default function CancelReservation() {
   const fnumber = useRef('');
   const from = useRef('');
   const to = useRef('');
-  const airport = useRef('');
   const bags = useRef('');
   useEffect(() => {
-    const body = {
-       Name: name.current.value,
-       userID: id.current.value,
-       FlightNumber: fnumber.current.value,
-       From: from.current.value,
-       To: to.current.value,
-       Airport: airport.current.value,
-       NumberOfBags: bags.current.value
-    };
+    const body = {};
+    if(name.current.value != "")
+    {
+      body["Name"] = name.current.value;
+    }
+    if(id.current.value != "")
+    {
+      body["userID"] = id.current.value;
+    }
+    if(from.current.value != "")
+    {
+      body["From"] = from.current.value;
+    }
+    if(to.current.value != "")
+    {
+      body["To"] = to.current.value;
+    }
+    if(bags.current.value != "")
+    {
+      body["NumberOfBags"] = bags.current.value;
+    }
+    if(fnumber.current.value != "")
+    {
+      body["FlightNumber"] = fnumber.current.value;
+    }
 
     if (confirm){
       console.log(body)
-    axios.delete(`http://localhost:8000/reservation/cancel-Reservation/${fnumber.current.value}`,body).then(res=> console.log(res)).catch();
-    setConfirm(false);
+      axios.delete(`http://localhost:8000/reservation/delete-Reservation/${body.value}`,body).then(res=> console.log(res)).catch();
+          setConfirm(false);
     }
 
   }, [confirm])
@@ -86,10 +101,7 @@ export default function CancelReservation() {
       inputRef={to}
       />
 
-      < TextField
-      label="Airport"
-      inputRef={airport}
-      />
+    
 
       < TextField
       label="Number of Bags"

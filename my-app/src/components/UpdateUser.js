@@ -39,7 +39,7 @@ export default function UpdateUser() {
     }
     if (confirm){
       console.log(body)
-    axios.patch(`http://localhost:8000/user/update-User/${fname.current.value}`,body).then(res=> console.log(res)).catch();
+    axios.patch(`http://localhost:8000/user/update-User/${body.value}`,body).then(res=> console.log(res)).catch();
     setConfirm(false);
     }
 

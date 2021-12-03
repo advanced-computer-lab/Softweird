@@ -22,7 +22,11 @@ const reservationSchema = new Schema({
     type: String,
     required: true
   },
-  Airport: {
+  DepartureAirport: {
+    type: String,
+    required: true
+  },
+  ArrivalAirport: {
     type: String,
     required: true
   },

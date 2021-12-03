@@ -18,13 +18,17 @@ import Guest from './Guest'
 import { BrowserRouter as Router, Route,Routes} from "react-router-dom";
 
 import {Footer,Header} from "./components/Index";
+import CreateUser from './components/CreateUser';
+import CreateReservation from './components/CreateReservation';
+import DepReturn from './components/DepReturn';
+import UserGuestSearch from './components/UserGuestSearch';
 
 ReactDOM.render(
   <React.StrictMode>
  
  <Router>
   <Header/>
-  <App/>
+  <UserGuestSearch/>
    <Footer/>
   </Router>,
 
