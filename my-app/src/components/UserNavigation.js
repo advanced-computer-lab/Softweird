@@ -10,7 +10,7 @@ function UserNavigation(){
                  <Link to="/ViewFlights">View Flights</Link>
             </li>
             <li>
-                 <Link to="/SearchFlight">Search For Flight</Link>
+                 <Link to="/UserGuestSearch">Search For Flight</Link>
             </li>
             <li>
                  <Link to="/UpdateUser">Update My Information</Link>
