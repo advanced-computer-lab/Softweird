@@ -17,7 +17,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-var x =[];
+import AirlineSeatReclineExtraIcon from '@mui/icons-material/AirlineSeatReclineExtra';
+
 var searched= false;
 const StyledTableCell  = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -43,6 +44,9 @@ export default function SearchFlight() {
   const [confirm,setConfirm] = useState(false);
   const [confirm1,setConfirm1] = useState(false);
   const [Cabin, setCabin] = React.useState('');
+  const [seat, setseat] = React.useState('');
+
+
   function handle(){
     // set the flight to be searched for
     setConfirm(true);
@@ -65,13 +69,14 @@ export default function SearchFlight() {
    body1["DepartureAirport"] = a.DepartureAirport;
    body1["ArrivalAirport"] = a.ArrivalAirport;
    body1["NumberOfBags"] = "2";
+   alert("are you sure?")
    axios.post(`http://localhost:8000/reservation/create-Reservation`,body1).then(res=> {console.log(res.data)}).catch();
     setConfirm(false);
   }
   
   const handleChange = (event) => {
     setCabin(event.target.value);
-  
+   setseat(event.target.value);
   };
 
   const depairport = useRef('');
@@ -195,7 +200,8 @@ export default function SearchFlight() {
               <StyledTableCell align="Left">Trip duration</StyledTableCell>
               <StyledTableCell align="Left">Allowed Baggage</StyledTableCell>
               <StyledTableCell align="Left">Price</StyledTableCell>
-              <StyledTableCell align="Left">Reserve</StyledTableCell>
+              <StyledTableCell align="Left">No.of seats</StyledTableCell>
+              <StyledTableCell align="Left">reserve</StyledTableCell>
             </TableRow>
           </TableHead>
           {flight?  (
@@ -220,6 +226,23 @@ export default function SearchFlight() {
                 <TableCell align="left">{a.TripDuration}</TableCell>
                 <TableCell align="left">{a.BaggageAllowance}</TableCell>
                 <TableCell align="left">{a.Price}</TableCell>
+                <TableCell align="left">{ <FormControl sx={{ m: 1, minWidth: 90 }}><InputLabel id="demo-simple-select-label"></InputLabel>
+  <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+   
+    label=" "
+   
+    onChange={handleChange}
+  >
+    <MenuItem value={"1"}>1</MenuItem>
+    <MenuItem value={"2"}>2</MenuItem>
+    <MenuItem value={"3"}>3</MenuItem>
+    <MenuItem value={"4"}>4</MenuItem>
+    <MenuItem value={"5"}>5</MenuItem>
+    <MenuItem value={"6"}>6</MenuItem>
+  </Select>
+</FormControl>}</TableCell>
                 <TableCell align="left">{<Button variant="contained" color="success" onClick={() => shoot(a)}
                 >
       Reserve

@@ -5,13 +5,17 @@ function GuestNavigation(){
 
     return(
         <ul>
-           
-            <li>
-                 <Link to="/ViewFlights">View Flights</Link>
-            </li>
-            <li>
-                 <Link to="/UserGuestSearch">Search For Flight</Link>
-            </li>
+         
+
+<div>
+     <Link to="/ViewFlights"  className= "Guest-link" >View Flights</Link>
+</div>
+<div>
+     <Link to="/UserGuestSearch" className= "Guest-link">Search For Flight</Link>
+</div>
+
+
+
  
         </ul>
     )

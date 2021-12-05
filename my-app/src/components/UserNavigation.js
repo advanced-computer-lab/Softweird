@@ -19,9 +19,7 @@ function UserNavigation(){
             <li>
                  <Link to="/ViewReservation" className= "User-link">View My Reservations</Link>
             </li>
-            <li>
-                 <Link to="/CancelReservation" className= "User-link">Cancel My Reservation</Link>
-            </li>
+            
         </ul>
     )
 }

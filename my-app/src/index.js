@@ -28,7 +28,7 @@ ReactDOM.render(
  
  <Router>
   <Header/>
-  <User/>
+  <App/>
    <Footer/>
   </Router>,
 

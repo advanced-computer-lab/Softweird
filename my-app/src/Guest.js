@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './User.css';
+import './Guest.css';
 import Home  from './components/Searchbar';
 import ViewFlights from './components/ViewFlights';
 import SearchFlight from './components/SearchFlight';

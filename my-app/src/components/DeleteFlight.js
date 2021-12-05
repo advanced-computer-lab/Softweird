@@ -23,12 +23,12 @@ export default function DeleteFlight() {
   };
   function handle(){
     // set the flight to be deleted
-    if (confirm("Are you sure you want to delete?") == true) {
+    alert("are you sure?")
       setConfirm(true);
-    } else {
-      setConfirm(false);
-    }
+    
+
   }
+  
   const fn = useRef('');
   const from = useRef('');
   const to = useRef('');
@@ -83,13 +83,13 @@ export default function DeleteFlight() {
       body["ArrivalTime"] = arrival.current.value;
     }
 
-    if (confirm){
+    if (confirm1){
       console.log(body)
     axios.delete(`http://localhost:8000/flight/delete-Flight/${fn.current.value}`,body).then(res=> console.log(res)).catch();
     setConfirm(false);
     }
 
-  }, [confirm])
+  }, [confirm1])
 
   return (
 

@@ -69,7 +69,7 @@ router.get('/get-all-flights', (req, res) => {
   //Deleting an existing Flight
   router.delete('/delete-Flight/:FlightNumber', (req,res)=>{
     console.log("nnnnn");
-    Flight.deleteMany(req.params.id, req.body).then(result =>{
+    Flight.findOneAndRemove({FlightNumber: req.params.FlightNumber}, req.body).then(result =>{
 
         res.status(200).send("Flight Deleted ");
         console.log(chalk.bold.red("The Flight is deleted successfully !"));
