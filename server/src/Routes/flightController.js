@@ -6,6 +6,7 @@ const chalk = require('chalk');
 
 //Get all entered Flights
 router.get('/get-all-flights', (req, res) => {
+  
   Flight.find()
     .then(result => {
       res.send(result);
@@ -16,7 +17,7 @@ router.get('/get-all-flights', (req, res) => {
 });
 
 //Get a certain entered Flight with a known attribute
-router.get('/get-all-flights/:FlightNumber', (req, res) => {
+/*router.get('/get-all-flights/:FlightNumber', (req, res) => {
     Flight.find({FlightNumber:req.params.FlightNumber})
       .then(result => {
         res.send(result);
@@ -25,8 +26,22 @@ router.get('/get-all-flights/:FlightNumber', (req, res) => {
         console.log(err);
       });
   });
+*/
+  //search
+  router.post('/search', (req, res) => {
+    Flight.find(req.body)
+      .then(result => {
+        res.send(result);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  });
+  
   // creating new Flight
   router.post('/create-Flight', (req, res) => {
+    console.log("@@@@@@@@@@@@@@@@@@");
+    console.log(req.body);
     const newFlight = new Flight(req.body);
   
     newFlight.save()
@@ -40,8 +55,8 @@ router.get('/get-all-flights/:FlightNumber', (req, res) => {
   });
 
   //Updating an existing Flight
-  router.put('/update-Flight/:FlightNumber', (req,res)=>{
-    Flight.findByFlightNumberAndUpdate(req.params.FlightNumber,req.body).then(result =>{
+  router.patch('/update-Flight/:id', (req,res)=>{
+    Flight.updateMany({FlightNumber: req.params.id}, req.body).then(result =>{
 
         res.status(200).send("flight updated ");
         console.log(chalk.bold.blue('The Flight is Updated successfully !'));
@@ -53,7 +68,8 @@ router.get('/get-all-flights/:FlightNumber', (req, res) => {
 
   //Deleting an existing Flight
   router.delete('/delete-Flight/:FlightNumber', (req,res)=>{
-    Flight.findByFlightNumberAndRemove(req.params.FlightNumber).then(result =>{
+    console.log("nnnnn");
+    Flight.deleteMany(req.params.id, req.body).then(result =>{
 
         res.status(200).send("Flight Deleted ");
         console.log(chalk.bold.red("The Flight is deleted successfully !"));

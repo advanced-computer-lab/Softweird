@@ -1,40 +1,33 @@
 import logo from './logo.svg';
-import './App.css';
+import './User.css';
 import Home  from './components/Searchbar';
-import Flightss from './components/Flightss';
-import UpdateFlight from './components/UpdateFlight';
-import DeleteFlight from './components/DeleteFlight';
 import ViewFlights from './components/ViewFlights';
 import SearchFlight from './components/SearchFlight';
 import UpdateUser from './components/UpdateUser';
 import CancelReservation from './components/CancelReservation';
 import ViewReservation from './components/ViewReservation';
-import Navigation from './components/Navigation';
+import GuestNavigation from './components/GuestNavigation';
+import UserGuestSearch from './components/UserGuestSearch';
+import DepReturn from './components/DepReturn';
 import { BrowserRouter as Router, Route,Routes} from "react-router-dom";
 import {Link} from 'react-router-dom'
 import Searchbar from './components/Searchbar';
 
-function App() {
+function Guest() {
   return (
-    <div className="App" >
-
-      <Navigation/>
+    <div className="Guest">
+    
+      
+      <GuestNavigation/>
       <Routes>
-
-      <Route exact path ="/Flightss" element={<Flightss/>}/>
-      <Route exact path ="/UpdateFlight" element={<UpdateFlight/>}/>
-      <Route exact path ="/DeleteFlight" element={<DeleteFlight/>}/>
+      
       <Route exact path ="/ViewFlights" element={<ViewFlights/>}/>
-      <Route exact path ="/SearchFlight" element={<SearchFlight/>}/>
-
-
+      <Route exact path ="/UserGuestSearch" element={<UserGuestSearch/>}/>
+      <Route exact path ="/DepReturn" element={<DepReturn/>}/>
+     
       </Routes>
     </div>
-
-
-
-
   );
 }
 
-export default App;
+export default Guest;
