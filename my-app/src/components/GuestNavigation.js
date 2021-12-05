@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom'
 
-function UserNavigation(){
+function GuestNavigation(){
 
     return(
         <ul>
@@ -10,10 +10,10 @@ function UserNavigation(){
                  <Link to="/ViewFlights">View Flights</Link>
             </li>
             <li>
-                 <Link to="/SearchFlight">Search For Flight</Link>
+                 <Link to="/UserGuestSearch">Search For Flight</Link>
             </li>
  
         </ul>
     )
 }
-export default UserNavigation;
+export default GuestNavigation;
