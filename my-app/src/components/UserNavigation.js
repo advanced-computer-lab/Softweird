@@ -1,25 +1,26 @@
 import React from "react";
 import {Link} from 'react-router-dom'
 
+
 function UserNavigation(){
 
     return(
         <ul>
-           
+
             <li>
-                 <Link to="/ViewFlights">View Flights</Link>
+                 <Link to="/ViewFlights"  className= "User-link" >View Flights</Link>
             </li>
             <li>
-                 <Link to="/UserGuestSearch">Search For Flight</Link>
+                 <Link to="/SearchFlight" className= "User-link">Search For Flight</Link>
             </li>
             <li>
-                 <Link to="/UpdateUser">Update My Information</Link>
+                 <Link to="/UpdateUser" className= "User-link">Update My Information</Link>
             </li>
             <li>
-                 <Link to="/ViewReservation">View My Reservations</Link>
+                 <Link to="/ViewReservation" className= "User-link">View My Reservations</Link>
             </li>
             <li>
-                 <Link to="/CancelReservation">Cancel My Reservation</Link>
+                 <Link to="/CancelReservation" className= "User-link">Cancel My Reservation</Link>
             </li>
         </ul>
     )

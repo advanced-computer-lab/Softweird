@@ -1,39 +1,50 @@
 .User {
-    text-align: center;
-  }
-  
+  text-align: left;
+}
+
+.User-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
   .User-logo {
-    height: 40vmin;
-    pointer-events: none;
+    animation: App-logo-spin infinite 20s linear;
   }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .User-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
+}
+
+.User-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+} 
+
+.User-link {
+  color: #000;
+}
+
+@keyframes User-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  .User-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  to {
+    transform: rotate(360deg);
   }
-  
-  .User-link {
-    color: #61dafb;
-  }
-  
-  @keyframes User-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
+}
+
+.User{
+
+background-image: url("https://images.pexels.com/photos/844297/pexels-photo-844297.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940%22");
+height: 89vh;
+width: 100vw;
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+position: absolute;
+
+}

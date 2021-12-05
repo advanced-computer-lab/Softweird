@@ -5,10 +5,22 @@ import {useState,useEffect,useRef} from 'react';
 import axios from "axios";
 import TextField from '@mui/material/TextField';
 import ReactDOM from "react-dom";
+import FormControl from '@mui/material/FormControl'
+import InputLabel from '@mui/material/InputLabel'
+import MenuItem from '@mui/material/MenuItem'
+import Select from '@mui/material/Select'
 
 export default function UpdateFlight() {
   //const [flight,setFlight] = useState();
   const [confirm,setConfirm] = useState(false);
+  const [Cabin, setCabin] = React.useState('');
+
+  const handleChange = (event) => {
+    setCabin(event.target.value);
+    
+   
+  
+  };
 
   function handle(){
     // set the flight to be created
@@ -76,15 +88,16 @@ export default function UpdateFlight() {
       }}
       noValidate
       autoComplete="off"
-    > Update Flight
+    > 
        <div>
        < TextField
       label="Flight Number"
       inputRef={fn}
       />
       < TextField
-      label="Date"
+      label=" "
       inputRef={date}
+      type= "date"
       />
       < TextField
       label="Departure Airport"
@@ -97,15 +110,27 @@ export default function UpdateFlight() {
       < TextField
       label="Departure Time"
       inputRef={departure}
+      type= "time"
       />
       < TextField
       label="Arrival Time"
       inputRef={arrival}
+      type= "time"
       />
-      < TextField
-      label="Cabin"
-      inputRef={cabin}
-      />
+      <FormControl sx={{ m: 1, minWidth: 200 }}><InputLabel id="demo-simple-select-label">Cabin</InputLabel>
+  <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    value={Cabin}
+    label="cabin"
+    inputRef={cabin}
+    onChange={handleChange}
+  >
+    <MenuItem value={"Economy"}>Economy</MenuItem>
+    <MenuItem value={"Business"}>Business</MenuItem>
+    <MenuItem value={"First"}>First</MenuItem>
+  </Select>
+</FormControl>
        < TextField
       label="Available Seats"
       inputRef={nos}

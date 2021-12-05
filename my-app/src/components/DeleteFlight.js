@@ -5,14 +5,29 @@ import {useState,useEffect,useRef} from 'react';
 import axios from "axios";
 import TextField from '@mui/material/TextField';
 import ReactDOM from "react-dom";
+import { confirm } from "react-confirm-box";
+import FormControl from '@mui/material/FormControl'
+import InputLabel from '@mui/material/InputLabel'
+import MenuItem from '@mui/material/MenuItem'
+import Select from '@mui/material/Select'
 
 export default function DeleteFlight() {
   //const [flight,setFlight] = useState();
-  const [confirm,setConfirm] = useState(false);
-
+  const [confirm1,setConfirm] = useState(false);
+  const [Cabin, setCabin] = React.useState('');
+ 
+  const handleChange = (event) => {
+    setCabin(event.target.value);
+  
+  
+  };
   function handle(){
     // set the flight to be deleted
-    setConfirm(true);
+    if (confirm("Are you sure you want to delete?") == true) {
+      setConfirm(true);
+    } else {
+      setConfirm(false);
+    }
   }
   const fn = useRef('');
   const from = useRef('');
@@ -94,8 +109,9 @@ export default function DeleteFlight() {
       inputRef={fn}
       />
       < TextField
-      label="Date"
+      label=" "
       inputRef={date}
+      type= "date"
       />
       < TextField
       label="From"
@@ -116,15 +132,27 @@ export default function DeleteFlight() {
       < TextField
       label="Departure Time"
       inputRef={departure}
+      type= "time"
       />
       < TextField
       label="Arrival Time"
       inputRef={arrival}
+      type= "time"
       />
-      < TextField
-      label="Cabin"
-      inputRef={cabin}
-      />
+      <FormControl sx={{ m: 1, minWidth: 200 }}><InputLabel id="demo-simple-select-label">Cabin</InputLabel>
+  <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    value={Cabin}
+    label="cabin"
+    inputRef={cabin}
+    onChange={handleChange}
+  >
+    <MenuItem value={"Economy"}>Economy</MenuItem>
+    <MenuItem value={"Business"}>Business</MenuItem>
+    <MenuItem value={"First"}>First</MenuItem>
+  </Select>
+</FormControl>
        < TextField
       label="Available Seats"
       inputRef={nos}

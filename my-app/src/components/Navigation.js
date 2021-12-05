@@ -4,24 +4,22 @@ import {Link} from 'react-router-dom'
 function Navigation(){
 
     return(
-        <ul>
-           
-            <li>
-                 <Link to="/Flightss">Create Flight</Link>
-            </li>
-            <li>
-                 <Link to="/UpdateFlight">Update Flight</Link>
-            </li>
-            <li>
-                 <Link to="/DeleteFlight">Delete Flight</Link>
-            </li>
-            <li>
-                 <Link to="/ViewFlights">View Flights</Link>
-            </li>
-            <li>
-                 <Link to="/SearchFlight">Search For Flight</Link>
-            </li>
-        </ul>
+     <div> 
+     <div>
+          <Link to="/Flightss"  className= "App-link">Create Flight</Link>
+     </div>
+
+     <div>
+          <Link to="/UpdateFlight" className= "App-link">Update Flight</Link>
+     </div>
+          <Link to="/DeleteFlight" className= "App-link">Delete Flight</Link>
+     <div>
+          <Link to="/ViewFlights" className= "App-link">View Flights</Link>
+     </div>
+          <Link to="/SearchFlight" className= "App-link">Search For Flight</Link>
+    
+         
+ </div>
     )
 }
 export default Navigation;

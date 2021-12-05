@@ -6,12 +6,19 @@ import axios from "axios";
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import ReactDOM from "react-dom";
+import FormControl from '@mui/material/FormControl'
+import InputLabel from '@mui/material/InputLabel'
+import MenuItem from '@mui/material/MenuItem'
+import Select from '@mui/material/Select'
 
 export default function Flightss() {
-  
+  const [Cabin, setCabin] = React.useState('');
   const [name, setName] = React.useState('Cat in the Hat');
   const handleChange = (event) => {
+    setCabin(event.target.value);
     setName(event.target.value);
+   
+  
   };
   
   const [confirm,setConfirm] = useState(false);
@@ -35,12 +42,12 @@ export default function Flightss() {
   const price = useRef('');
   useEffect(() => {
     const body = {
-       FlightNumber: fn.current.value,
-       From: from.current.value,
-       To: to.current.value,
-       DepartureAirport: depairport.current.value,
-       ArrivalAirport: arrairport.current.value,
-       Cabin: cabin.current.value,
+       FlightNumber: fn.current.value.toUpperCase() ,
+       From: from.current.value.toUpperCase() ,
+       To: to.current.value.toUpperCase() ,
+       DepartureAirport: depairport.current.value.toUpperCase() ,
+       ArrivalAirport: arrairport.current.value.toUpperCase() ,
+       Cabin: cabin.current.value.toUpperCase() ,
        AvailableSeats: nos.current.value,
        Date: date.current.value,
        DepartureTime: departure.current.value,
@@ -70,7 +77,7 @@ export default function Flightss() {
     >
     
 
-         Create Flight
+         
        <div>
 
       < TextField
@@ -79,8 +86,9 @@ export default function Flightss() {
       />
            
       < TextField
-      label="Date"
+      label=" "
       inputRef={date}
+      type= "date"
       />
       
       < TextField
@@ -105,17 +113,29 @@ export default function Flightss() {
       < TextField
       label="Departure Time"
       inputRef={departure}
+      type= "time"
       />
       
       < TextField
       label="Arrival Time"
       inputRef={arrival}
+      type= "time"
       />
 
-      < TextField
-      label="Cabin"
-      inputRef={cabin}
-      />
+<FormControl sx={{ m: 1, minWidth: 200 }}><InputLabel id="demo-simple-select-label">Cabin</InputLabel>
+  <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    value={Cabin}
+    label="cabin"
+    inputRef={cabin}
+    onChange={handleChange}
+  >
+    <MenuItem value={"Economy"}>Economy</MenuItem>
+    <MenuItem value={"Business"}>Business</MenuItem>
+    <MenuItem value={"First"}>First</MenuItem>
+  </Select>
+</FormControl>
 
       < TextField
       label="Available Seats"
@@ -136,8 +156,8 @@ export default function Flightss() {
       />
       
       </div>
-      <Button variant="contained" color="success" disableElevation onClick = {handle}>
-      Confirm
+      <Button variant="contained" color="success"  disableElevation onClick = {handle}>
+      Create
     </Button>
     
     </Box>

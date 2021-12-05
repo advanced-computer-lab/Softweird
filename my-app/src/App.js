@@ -16,21 +16,24 @@ import Searchbar from './components/Searchbar';
 
 function App() {
   return (
-    <div className="App">
-    
-      
+    <div className="App" >
+
       <Navigation/>
       <Routes>
-      
+
       <Route exact path ="/Flightss" element={<Flightss/>}/>
       <Route exact path ="/UpdateFlight" element={<UpdateFlight/>}/>
       <Route exact path ="/DeleteFlight" element={<DeleteFlight/>}/>
       <Route exact path ="/ViewFlights" element={<ViewFlights/>}/>
       <Route exact path ="/SearchFlight" element={<SearchFlight/>}/>
-     
-     
+
+
       </Routes>
     </div>
+
+
+
+
   );
 }
 
