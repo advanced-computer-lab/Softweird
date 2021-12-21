@@ -1,0 +1,33 @@
+
+Get http://localhost:8000/user/getusername
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzExOWYxM2ViN2JjYjE2ZDMzYmFmNCIsInVzZXJuYW1lIjoidGFzayIsImlhdCI6MTY0MDA0NTA1MSwiZXhwIjoxNjQwMTMxNDUxfQ.AzCRV8CeopIUifCCuA423P-xyYyROXGRG5soSpuBxKU
+###
+
+Post http://localhost:8000/user/login
+Content-Type: application/json
+
+{
+    "username": "task",
+     "Password": "you"
+}
+
+###
+
+Post http://localhost:8000/user/create-user
+Content-Type: application/json
+
+{
+    "username": "task",
+    "FirstName": "ahmed",
+    "LastName":"SALEM",
+     "PassportNumber": "546",
+    "Email":"s@gmail.com",
+     "Password": "you",
+    "Age":"18",
+     "Nationality": "Egyptian",
+    "PhoneNumber":"0105233523"
+}
+
+###
+
+GET http://localhost:8000/user/get-all-users
