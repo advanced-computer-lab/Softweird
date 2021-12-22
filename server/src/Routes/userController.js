@@ -69,6 +69,7 @@ else{
   })
   dbUser.save()
   console.log("User created Successfully!")
+  
 }
   });
   router.get("/getusername",authenticateToken,(req,res)=>{
@@ -81,6 +82,7 @@ else{
     .then(dbUser=> {
       if(!dbUser){
         console.log("not valid username")
+        
       }
       else{ 
         console.log(userlogin.Password)

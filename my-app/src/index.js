@@ -2,16 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-
-
 import CancelReservation from './components/CancelReservation';
 import App from './App'
 import User from './User'
 import Guest from './Guest'
 import Signup from './Signup'
-import login from './login'
+import Login from './login'
 import { BrowserRouter as Router, Route,Routes} from "react-router-dom";
-
 import {Footer,Header} from "./components/Index";
 import CreateUser from './components/CreateUser';
 import CreateReservation from './components/CreateReservation';
@@ -23,7 +20,7 @@ ReactDOM.render(
  
  <Router>
   <Header/>
-  <login/>
+  <Login/>
    <Footer/>
   </Router>,
 
