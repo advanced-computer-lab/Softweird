@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 const Admin = require('../Models/Admin');
-
 const chalk = require('chalk');
 
 

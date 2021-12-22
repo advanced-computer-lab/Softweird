@@ -111,4 +111,4 @@ export default function CreateUser() {
     </Box>
   );
 }
-ReactDOM.render(<CreateUser />, document.getElementById('root'));
+ReactDOM.render(<CreateUser/>, document.getElementById('root'));

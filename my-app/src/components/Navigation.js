@@ -8,6 +8,9 @@ function Navigation(){
      <div>
           <Link to="/Flightss"  className= "App-link">Create Flight</Link>
      </div>
+     <div>
+          <Link to="/Signupc"  className= "Signupc">signup</Link>
+     </div>
 
      <div>
           <Link to="/UpdateFlight" className= "App-link">Update Flight</Link>

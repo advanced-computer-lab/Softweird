@@ -1,14 +1,14 @@
 
 Get http://localhost:8000/user/getusername
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzExOWYxM2ViN2JjYjE2ZDMzYmFmNCIsInVzZXJuYW1lIjoidGFzayIsImlhdCI6MTY0MDA0NTA1MSwiZXhwIjoxNjQwMTMxNDUxfQ.AzCRV8CeopIUifCCuA423P-xyYyROXGRG5soSpuBxKU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzI1Mjk0ZWVhNTRkZjUwMGVhZmVlNyIsInVzZXJuYW1lIjoic2FzbGUiLCJpYXQiOjE2NDAxMjUxMTMsImV4cCI6MTY0MDIxMTUxM30.-rgrdBZRojMHMBxQYwEgoIHjXlIMBoGdkmtQGW-9jbA
 ###
 
 Post http://localhost:8000/user/login
 Content-Type: application/json
 
 {
-    "username": "task",
-     "Password": "you"
+    "username": "le",
+     "Password": "oar"
 }
 
 ###
@@ -17,12 +17,12 @@ Post http://localhost:8000/user/create-user
 Content-Type: application/json
 
 {
-    "username": "task",
-    "FirstName": "ahmed",
+    "username": "le",
+    "FirstName": "farouk",
     "LastName":"SALEM",
      "PassportNumber": "546",
-    "Email":"s@gmail.com",
-     "Password": "you",
+    "Email":"mail.com",
+     "Password": "oar",
     "Age":"18",
      "Nationality": "Egyptian",
     "PhoneNumber":"0105233523"

@@ -3,18 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-import Flightss from './components/Flightss';
-import Searchbar from './components/Searchbar';
-import ViewReservation from './components/ViewReservation';
-import ViewFlights from './components/ViewFlights';
-import DeleteFlight from './components/DeleteFlight';
-import UpdateFlight from './components/UpdateFlight';
-import SearchFlight from './components/SearchFlight';
-import UpdateUser from './components/UpdateUser';
+
 import CancelReservation from './components/CancelReservation';
 import App from './App'
 import User from './User'
 import Guest from './Guest'
+import Signup from './Signup'
+import login from './login'
 import { BrowserRouter as Router, Route,Routes} from "react-router-dom";
 
 import {Footer,Header} from "./components/Index";
@@ -28,7 +23,7 @@ ReactDOM.render(
  
  <Router>
   <Header/>
-  <User/>
+  <login/>
    <Footer/>
   </Router>,
 

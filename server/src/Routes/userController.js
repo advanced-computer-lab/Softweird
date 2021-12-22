@@ -43,7 +43,9 @@ router.get('/get-all-users', (req, res) => {
   
   // creating new Flight
   router.post('/create-user', async (req, res) => {
+    console.log(req.body);
    const user= req.body;
+  
    const takenUsername= await User.findOne({username: user.username})
    const takenEmail = await User.findOne({Email: user.Email})
    
@@ -70,7 +72,7 @@ else{
 }
   });
   router.get("/getusername",authenticateToken,(req,res)=>{
-    res.json({isLoggedIn: true, username:req.user.username})
+    res.json({isLoggedIn: true, username:req.user.Password})
   })
 
   router.post("/login", async (req,res)=>{ 
