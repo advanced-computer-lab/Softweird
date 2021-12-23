@@ -153,19 +153,19 @@ export default function SearchFlight() {
      <Table sx={{ minWidth: 600 }} size="small" aria-label="a dense table">
        <TableHead>
          <TableRow>
-           <StyledTableCell>FlightNumber</StyledTableCell>
-           <StyledTableCell align="Left">Date</StyledTableCell>
-           <StyledTableCell align="Left">From</StyledTableCell>
-           <StyledTableCell align="Left">To</StyledTableCell>
-           <StyledTableCell align="Left">Departure Airport</StyledTableCell>
-           <StyledTableCell align="Left">Arrival Airport</StyledTableCell>
-           <StyledTableCell>Departure Time</StyledTableCell>
-           <StyledTableCell align="Left">Arrival Time</StyledTableCell>
-           <StyledTableCell align="Left">Cabin</StyledTableCell>
-           <StyledTableCell align="Left">Available Seats</StyledTableCell>
-           <StyledTableCell align="Left">Trip duration</StyledTableCell>
-           <StyledTableCell align="Left">Allowed Baggage</StyledTableCell>
-           <StyledTableCell align="Left">Price</StyledTableCell>
+           <StyledTableCell align="center">FlightNumber</StyledTableCell>
+           <StyledTableCell align="center">Date</StyledTableCell>
+           <StyledTableCell align="center">From</StyledTableCell>
+           <StyledTableCell align="center">To</StyledTableCell>
+           <StyledTableCell align="center">Departure Airport</StyledTableCell>
+           <StyledTableCell align="center">Arrival Airport</StyledTableCell>
+           <StyledTableCell align="center">Departure Time</StyledTableCell>
+           <StyledTableCell align="center">Arrival Time</StyledTableCell>
+           <StyledTableCell align="center">Cabin</StyledTableCell>
+           <StyledTableCell align="center">Available Seats</StyledTableCell>
+           <StyledTableCell align="center">Trip duration</StyledTableCell>
+           <StyledTableCell align="center">Allowed Baggage</StyledTableCell>
+           <StyledTableCell align="center">Price</StyledTableCell>
          </TableRow>
        </TableHead>
        <TableBody>
@@ -176,19 +176,19 @@ export default function SearchFlight() {
            >
              
             
-             <TableCell align="left">{a.FlightNumber}</TableCell>
-             <TableCell align="left">{a.Date.substr(0, a.Date.indexOf('T'))}</TableCell>
-             <TableCell align="left">{a.From}</TableCell>
-             <TableCell align="left">{a.To}</TableCell>
-             <TableCell align="left">{a.DepartureAirport}</TableCell>
-             <TableCell align="left">{a.ArrivalAirport}</TableCell>
-             <TableCell align="left">{a.DepartureTime}</TableCell>
-             <TableCell align="left">{a.ArrivalTime}</TableCell>
-             <TableCell align="left">{a.Cabin}</TableCell>
-             <TableCell align="left">{a.AvailableSeats}</TableCell>
-             <TableCell align="left">{a.TripDuration}</TableCell>
-             <TableCell align="left">{a.BaggageAllowance}</TableCell>
-             <TableCell align="left">{a.Price}</TableCell>
+             <TableCell align="center">{a.FlightNumber}</TableCell>
+             <TableCell align="center">{a.Date.substr(0, a.Date.indexOf('T'))}</TableCell>
+             <TableCell align="center">{a.From}</TableCell>
+             <TableCell align="center">{a.To}</TableCell>
+             <TableCell align="center">{a.DepartureAirport}</TableCell>
+             <TableCell align="center">{a.ArrivalAirport}</TableCell>
+             <TableCell align="center">{a.DepartureTime}</TableCell>
+             <TableCell align="center">{a.ArrivalTime}</TableCell>
+             <TableCell align="center">{a.Cabin}</TableCell>
+             <TableCell align="center">{a.AvailableSeats}</TableCell>
+             <TableCell align="center">{a.TripDuration}</TableCell>
+             <TableCell align="center">{a.BaggageAllowance}</TableCell>
+             <TableCell align="center">{a.Price}</TableCell>
            </StyledTableRow>
          ))}
        </TableBody>

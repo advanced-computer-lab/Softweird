@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reservationSchema = new Schema({
-  Name: {
+  FirstName: {
     type: String,
     required: true,
   },
-  userID: {
+  LastName: {
     type: String,
-    required: true
+    required: true,
   },
   FlightNumber: {
     type:   String,

@@ -2,6 +2,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import './login.css';
 import {useState,useEffect,useRef} from 'react';
 import axios from "axios";
 import Stack from '@mui/material/Stack';
@@ -44,7 +45,7 @@ function Signup() {
             }, [confirm])
         
     return (
-        <Box
+        <Box className = "login"
         
         component="form"
         sx={{
@@ -71,7 +72,7 @@ function Signup() {
         
         </div>
         <Button variant="contained" color="success" disableElevation onClick = {handle}>
-        Confirm
+        Login
       </Button>
       
       </Box>

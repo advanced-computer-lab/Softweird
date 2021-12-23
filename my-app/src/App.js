@@ -3,7 +3,6 @@ import './App.css';
 import Home  from './components/Searchbar';
 import Flightss from './components/Flightss';
 import UpdateFlight from './components/UpdateFlight';
-import DeleteFlight from './components/DeleteFlight';
 import ViewFlights from './components/ViewFlights';
 import SearchFlight from './components/SearchFlight';
 import UpdateUser from './components/UpdateUser';
@@ -23,7 +22,6 @@ function App() {
 
       <Route exact path ="/Flightss" element={<Flightss/>}/>
       <Route exact path ="/UpdateFlight" element={<UpdateFlight/>}/>
-      <Route exact path ="/DeleteFlight" element={<DeleteFlight/>}/>
       <Route exact path ="/ViewFlights" element={<ViewFlights/>}/>
       <Route exact path ="/SearchFlight" element={<SearchFlight/>}/>
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState,useEffect } from 'react';
-import Button from '@mui/material/Button';
 import axios from 'axios';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -31,12 +30,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     border: 0,
   },
 }));
-export default function ViewFlights() {
+export default function ViewFlightsUG() {
   const [l,setL] = useState([]);
-
-  const handle1 = (a) => {
-    axios.delete(`http://localhost:8000/flight/delete-Flight/${a.FlightNumber}`,a).then(res=> console.log(res)).catch();
-  }
 
   useEffect(() => {
     console.log("here");
@@ -51,7 +46,7 @@ export default function ViewFlights() {
      <Table sx={{ minWidth: 600 }} size="small" aria-label="a dense table">
        <TableHead>
          <TableRow>
-           <StyledTableCell align="center">FlightNumber</StyledTableCell>
+           <StyledTableCell>FlightNumber</StyledTableCell>
            <StyledTableCell align="center">Date</StyledTableCell>
            <StyledTableCell align="center">From</StyledTableCell>
            <StyledTableCell align="center">To</StyledTableCell>
@@ -64,7 +59,6 @@ export default function ViewFlights() {
            <StyledTableCell align="center">Trip duration</StyledTableCell>
            <StyledTableCell align="center">Allowed Baggage</StyledTableCell>
            <StyledTableCell align="center">Price</StyledTableCell>
-           <StyledTableCell align="center">Delete</StyledTableCell>
          </TableRow>
        </TableHead>
        <TableBody>
@@ -88,10 +82,6 @@ export default function ViewFlights() {
              <StyledTableCell align="center">{a.TripDuration}</StyledTableCell>
              <StyledTableCell align="center">{a.BaggageAllowance}</StyledTableCell>
              <StyledTableCell align="center">{a.Price}</StyledTableCell>
-             <TableCell align="center">{<Button variant="contained" color="success" onClick={() => handle1(a)}
-                >
-      Delete
-    </Button>}</TableCell>
            </StyledTableRow>
          ))}
        </TableBody>

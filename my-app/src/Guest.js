@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './Guest.css';
 import Home  from './components/Searchbar';
 import ViewFlights from './components/ViewFlights';
+import ViewFlightsUG from './components/ViewFlightsUG';
 import SearchFlight from './components/SearchFlight';
 import UpdateUser from './components/UpdateUser';
 import CancelReservation from './components/CancelReservation';
@@ -21,7 +22,7 @@ function Guest() {
       <GuestNavigation/>
       <Routes>
       
-      <Route exact path ="/ViewFlights" element={<ViewFlights/>}/>
+      <Route exact path ="/ViewFlightsUG" element={<ViewFlightsUG/>}/>
       <Route exact path ="/UserGuestSearch" element={<UserGuestSearch/>}/>
       <Route exact path ="/DepReturn" element={<DepReturn/>}/>
      

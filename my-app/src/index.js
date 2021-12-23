@@ -20,8 +20,7 @@ ReactDOM.render(
  
  <Router>
   <Header/>
-  <Login/>
-   <Footer/>
+  <Guest/>
   </Router>,
 
   </React.StrictMode>,

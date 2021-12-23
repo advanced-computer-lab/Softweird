@@ -40,7 +40,7 @@ const shoot = (a) => {
    body1["DepartureAirport"] = a.DepartureAirport;
    body1["ArrivalAirport"] = a.ArrivalAirport;
    body1["NumberOfBags"] = "2";
-   
+   console.log(a.FlightNumber);
   axios.delete(`http://localhost:8000/reservation/delete-Reservation/${a.FlightNumber.current.value}`,body1).then(res=> console.log(res)).catch();
  }
 
@@ -62,15 +62,16 @@ export default function ViewReservation() {
   <TableHead>
     <TableRow>
      
-      <StyledTableCell align="Left">Name</StyledTableCell>
-      <StyledTableCell align="Left">userID</StyledTableCell>
-      <StyledTableCell align="Left">Flightnumber</StyledTableCell>
-      <StyledTableCell align="Left">From</StyledTableCell>
-      <StyledTableCell align="Left">To</StyledTableCell>
-      <StyledTableCell align="Left">DepartureAirport</StyledTableCell>
-      <StyledTableCell align="Left">ArrivalAirport</StyledTableCell>
-      <StyledTableCell align="Left">NumberOfBags</StyledTableCell>
-      <StyledTableCell align="Left">Delete Reservation</StyledTableCell>
+      <StyledTableCell align="center">Name</StyledTableCell>
+      <StyledTableCell align="center">userID</StyledTableCell>
+      <StyledTableCell align="center">Flightnumber</StyledTableCell>
+      <StyledTableCell align="center">From</StyledTableCell>
+      <StyledTableCell align="center">To</StyledTableCell>
+      <StyledTableCell align="center">DepartureAirport</StyledTableCell>
+      <StyledTableCell align="center">ArrivalAirport</StyledTableCell>
+      <StyledTableCell align="center">NumberOfBags</StyledTableCell>
+      <StyledTableCell align="center">Edit Reservation</StyledTableCell>
+      <StyledTableCell align="center">Delete Reservation</StyledTableCell>
     
     </TableRow>
   </TableHead>
@@ -82,16 +83,19 @@ export default function ViewReservation() {
       >
         
        
-        <StyledTableCell align="left">{a.Name}</StyledTableCell>
-        <StyledTableCell align="left">{a.userID}</StyledTableCell>
-        <StyledTableCell align="left">{a.FlightNumber}</StyledTableCell>
-        <StyledTableCell align="left">{a.From}</StyledTableCell>
-        <StyledTableCell align="left">{a.To}</StyledTableCell>
-        <StyledTableCell align="left">{a.DepartureAirport}</StyledTableCell>
-        <StyledTableCell align="left">{a.ArrivalAirport}</StyledTableCell>
-        <StyledTableCell align="left">{a.NumberOfBags}</StyledTableCell>
-        <StyledTableCell align="left">{<Button variant="contained" color="error" onClick={() => shoot(a)}>
-      Remove
+        <StyledTableCell align="center">{a.Name}</StyledTableCell>
+        <StyledTableCell align="center">{a.userID}</StyledTableCell>
+        <StyledTableCell align="center">{a.FlightNumber}</StyledTableCell>
+        <StyledTableCell align="center">{a.From}</StyledTableCell>
+        <StyledTableCell align="center">{a.To}</StyledTableCell>
+        <StyledTableCell align="center">{a.DepartureAirport}</StyledTableCell>
+        <StyledTableCell align="center">{a.ArrivalAirport}</StyledTableCell>
+        <StyledTableCell align="center">{a.NumberOfBags}</StyledTableCell>
+        <StyledTableCell align="center">{<Button variant="contained" color="error" onClick={() => shoot(a)}>
+      Edit Reservation
+    </Button>}</StyledTableCell>
+        <StyledTableCell align="center">{<Button variant="contained" color="error" onClick={() => shoot(a)}>
+      Cancel
     </Button>}</StyledTableCell>
         
       </StyledTableRow>
