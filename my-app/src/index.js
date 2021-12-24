@@ -19,8 +19,18 @@ ReactDOM.render(
   <React.StrictMode>
  
  <Router>
+
+  <div className="App">
   <Header/>
-  <User/>
+  <Routes>
+    <Route exact path="/" element={<Login/>}/>
+    <Route exact path="/user" element={<User/>}/>
+    <Route exact path="/App" element={<App/>}/>
+    <Route exact path="/Signup" element={<Signup/>}/>
+
+  </Routes>
+   <Footer/>
+   </div>
   </Router>,
 
   </React.StrictMode>,

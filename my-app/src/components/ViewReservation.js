@@ -43,11 +43,22 @@ const shoot = (a) => {
    console.log(a);
   axios.delete(`http://localhost:8000/reservation/delete-Reservation/${a.FlightNumber}`,body1).then(res=> console.log(res)).catch();
  }
- const shoot1 = (a) => {
+ const edit = (a) => {
+  const body1= {};
+   body1["Name"] = "Med7t";
+   body1["userID"] = "7";
+   body1["FlightNumber"] = a.FlightNumber;
+   body1["From"] = a.From;
+   body1["To"] = a.To;
+   body1["DepartureAirport"] = a.DepartureAirport;
+   body1["ArrivalAirport"] = a.ArrivalAirport;
+   body1["NumberOfBags"] = "2";
+   console.log(a);
+  axios.delete(`http://localhost:8000/reservation/delete-Reservation/${a.FlightNumber}`,body1).then(res=> console.log(res)).catch();
 
  }
- const shoot2 = (a) => {
-   
+ const seat = (a) => {
+
  }
 
 export default function ViewReservation() {
@@ -98,10 +109,10 @@ export default function ViewReservation() {
         <StyledTableCell align="center">{a.DepartureAirport}</StyledTableCell>
         <StyledTableCell align="center">{a.ArrivalAirport}</StyledTableCell>
         <StyledTableCell align="center">{a.NumberOfBags}</StyledTableCell>
-        <StyledTableCell align="center">{<Button variant="contained" color="error" onClick={() => shoot2(a)}>
+        <StyledTableCell align="center">{<Button variant="contained" color="error" onClick={() => seat(a)}>
       Choose Seats
     </Button>}</StyledTableCell>
-        <StyledTableCell align="center">{<Button variant="contained" color="error" onClick={() => shoot1(a)}>
+        <StyledTableCell align="center">{<Button variant="contained" color="error" onClick={() => edit(a)}>
       Edit Reservation
     </Button>}</StyledTableCell>
         <StyledTableCell align="center">{<Button variant="contained" color="error" onClick={() => shoot(a)}>

@@ -17,9 +17,13 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
+import { Route } from 'react-router-dom';
+import ViewFlights from './ViewFlights';
+import ViewFlightsUG from './ViewFlightsUG';
 var searched= false;
 var information = false;
 var pay = false;
+var routin = false;
 const  res1 = {};
 const res2 = {};
 const body3 = {};
@@ -134,6 +138,8 @@ export default function GuestSearch() {
   }
   function payment()
   {
+     
+    window.location.replace('http://localhost:3000/ViewFlightsUG');
     axios.post(`http://localhost:8000/reservation/create-Reservation`,res1).then(res=> {console.log(res.data)}).catch();
     axios.post(`http://localhost:8000/reservation/create-Reservation`,res2).then(res=> {console.log(res.data)}).catch();
   }
@@ -399,6 +405,7 @@ export default function GuestSearch() {
            console.log("not yet")
            
          )}
+ 
     </Box>
 
    

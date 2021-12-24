@@ -10,11 +10,13 @@ import TextField from '@mui/material/TextField';
 import ReactDOM from "react-dom";
 import SignupNavigation from './components/SignupNavigation';
 import { BrowserRouter as Router, Route,Routes} from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 
-
+var curruser = {};
 function Signup() {
 
+        const navigate = useNavigate();
         const [name, setName] = React.useState('Cat in the Hat');
         const handleChange = (event) => {
           setName(event.target.value);
@@ -34,6 +36,18 @@ function Signup() {
           const nationality = useRef('');
           const phonenumber = useRef('');
           
+          const checkuser = (curruser) =>
+          {
+            
+            if(curruser != null)
+            {
+              navigate('/');
+            }
+            else
+            {
+              alert("UserName or Email alresdy exist!");
+            }
+          }
           useEffect(() => {
             const body = {
                 username: username.current.value,
@@ -49,7 +63,10 @@ function Signup() {
             
             if (confirm){
                 
-              axios.post(`http://localhost:8000/user/create-user`,body).then(res=> console.log(res)).catch();
+              axios.post(`http://localhost:8000/user/create-user`,body)
+              .then(res => curruser = res.data, checkuser(curruser)
+                )
+              .catch();
               setConfirm(false);
               }
           

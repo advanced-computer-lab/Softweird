@@ -68,6 +68,7 @@ else{
     PhoneNumber:user.PhoneNumber.toLowerCase()
   })
   dbUser.save()
+  res.json(dbUser);
   console.log("User created Successfully!")
   
 }

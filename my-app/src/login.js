@@ -10,11 +10,16 @@ import TextField from '@mui/material/TextField';
 import ReactDOM from "react-dom";
 import SignupNavigation from './components/SignupNavigation';
 import { BrowserRouter as Router, Route,Routes} from "react-router-dom";
+import { checkPrime } from 'crypto';
+import { useFormControlUnstyled } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+
 
 const currentUser = {};
 
 function Login() {
 
+        const navigate = useNavigate();
         const [name, setName] = React.useState('Cat in the Hat');
         const handleChange = (event) => {
           setName(event.target.value);
@@ -27,6 +32,24 @@ function Login() {
           const username = useRef('');
           const password = useRef('');
           
+          const userFound = (currentUser) => {
+
+            
+            if(Object.keys(currentUser).length === 0)
+            {
+              console.log("eeeeeeeeeee");
+              alert("Wrong UserName or Password!");
+            }
+            else
+            {
+              navigate('/user');
+            }
+          }
+
+         function handle1()
+         {
+          navigate('/Signup');
+         }
           
           useEffect(() => {
             const body = {
@@ -38,7 +61,8 @@ function Login() {
             
             if (confirm){
                 
-              axios.post(`http://localhost:8000/user/login`,body).then(res=> currentUser = res.data).catch();
+              axios.post(`http://localhost:8000/user/login`,body).then(res=> console.log(res) , userFound(currentUser))
+              .catch();
               setConfirm(false);
               }
           
@@ -74,7 +98,12 @@ function Login() {
         <Button variant="contained" color="success" disableElevation onClick = {handle}>
         Login
       </Button>
-      
+    
+      <div>
+        <Button variant="contained" color="success" disableElevation onClick = {handle1}>
+        I Do Not Have An Account
+      </Button>
+      </div>
       </Box>
   
   

@@ -136,6 +136,9 @@ export default function UserSearch() {
   }
   function payment()
   {
+    
+    
+   
     axios.post(`http://localhost:8000/reservation/create-Reservation`,res1).then(res=> {console.log(res.data)}).catch();
     axios.post(`http://localhost:8000/reservation/create-Reservation`,res2).then(res=> {console.log(res.data)}).catch();
   }
