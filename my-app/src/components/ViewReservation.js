@@ -40,8 +40,14 @@ const shoot = (a) => {
    body1["DepartureAirport"] = a.DepartureAirport;
    body1["ArrivalAirport"] = a.ArrivalAirport;
    body1["NumberOfBags"] = "2";
-   console.log(a.FlightNumber);
-  axios.delete(`http://localhost:8000/reservation/delete-Reservation/${a.FlightNumber.current.value}`,body1).then(res=> console.log(res)).catch();
+   console.log(a);
+  axios.delete(`http://localhost:8000/reservation/delete-Reservation/${a.FlightNumber}`,body1).then(res=> console.log(res)).catch();
+ }
+ const shoot1 = (a) => {
+
+ }
+ const shoot2 = (a) => {
+   
  }
 
 export default function ViewReservation() {
@@ -70,6 +76,7 @@ export default function ViewReservation() {
       <StyledTableCell align="center">DepartureAirport</StyledTableCell>
       <StyledTableCell align="center">ArrivalAirport</StyledTableCell>
       <StyledTableCell align="center">NumberOfBags</StyledTableCell>
+      <StyledTableCell align="center">Choose Seats</StyledTableCell>
       <StyledTableCell align="center">Edit Reservation</StyledTableCell>
       <StyledTableCell align="center">Delete Reservation</StyledTableCell>
     
@@ -91,7 +98,10 @@ export default function ViewReservation() {
         <StyledTableCell align="center">{a.DepartureAirport}</StyledTableCell>
         <StyledTableCell align="center">{a.ArrivalAirport}</StyledTableCell>
         <StyledTableCell align="center">{a.NumberOfBags}</StyledTableCell>
-        <StyledTableCell align="center">{<Button variant="contained" color="error" onClick={() => shoot(a)}>
+        <StyledTableCell align="center">{<Button variant="contained" color="error" onClick={() => shoot2(a)}>
+      Choose Seats
+    </Button>}</StyledTableCell>
+        <StyledTableCell align="center">{<Button variant="contained" color="error" onClick={() => shoot1(a)}>
       Edit Reservation
     </Button>}</StyledTableCell>
         <StyledTableCell align="center">{<Button variant="contained" color="error" onClick={() => shoot(a)}>

@@ -11,9 +11,9 @@ import ReactDOM from "react-dom";
 import SignupNavigation from './components/SignupNavigation';
 import { BrowserRouter as Router, Route,Routes} from "react-router-dom";
 
+const currentUser = {};
 
-
-function Signup() {
+function Login() {
 
         const [name, setName] = React.useState('Cat in the Hat');
         const handleChange = (event) => {
@@ -38,7 +38,7 @@ function Signup() {
             
             if (confirm){
                 
-              axios.post(`http://localhost:8000/user/login`,body).then(res=> console.log(res)).catch();
+              axios.post(`http://localhost:8000/user/login`,body).then(res=> currentUser = res.data).catch();
               setConfirm(false);
               }
           
@@ -83,4 +83,4 @@ function Signup() {
     );
   }
   
-  export default Signup;
+  export default Login;

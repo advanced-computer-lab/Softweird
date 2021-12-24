@@ -11,7 +11,7 @@ const reservationSchema = new Schema({
     required: true,
   },
   FlightNumber: {
-    type:   String,
+    type:  String,
     required: true
   },
   From: {
@@ -21,6 +21,15 @@ const reservationSchema = new Schema({
   To: {
     type: String,
     required: true
+  },
+  PassportNumber: {
+    type: String,
+    required: true
+  },
+  Email: {
+    type: String,
+    required: true,
+    unique: true
   },
   DepartureAirport: {
     type: String,

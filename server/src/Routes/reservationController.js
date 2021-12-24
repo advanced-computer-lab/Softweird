@@ -69,7 +69,7 @@ router.get('/get-all-reservations', (req, res) => {
   //Deleting an existing Reservation
   router.delete('/delete-Reservation/:FlightNumber', (req,res)=>{
     console.log("nnnnn");
-    Reservation.findByIdAndRemove({Flightnumber: req.params.id}, req.body).then(result =>{
+    Reservation.findOneAndRemove({FlightNumber: req.params.FlightNumber}, req.body).then(result =>{
 
         res.status(200).send("Reservation Deleted ");
         console.log(chalk.bold.red("The Reservation is deleted successfully !"));

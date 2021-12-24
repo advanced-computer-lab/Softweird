@@ -11,7 +11,7 @@ function UserNavigation(){
                  <Link to="/ViewFlightsUG"  className= "User-link" >View Flights</Link>
             </div>
             <div>
-                 <Link to="/UserGuestSearch" className= "User-link">Search For Flight</Link>
+                 <Link to="/UserSearch" className= "User-link">Search For Flight</Link>
             </div>
             <div>
                  <Link to="/UpdateUser" className= "User-link">Update My Information</Link>

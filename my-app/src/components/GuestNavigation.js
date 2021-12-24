@@ -11,7 +11,7 @@ function GuestNavigation(){
      <Link to="/ViewFlightsUG"  className= "Guest-link" >View Flights</Link>
 </div>
 <div>
-     <Link to="/UserGuestSearch" className= "Guest-link">Search For Flight</Link>
+     <Link to="/GuestSearch" className= "Guest-link">Search For Flight</Link>
 </div>
 
 

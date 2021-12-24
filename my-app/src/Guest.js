@@ -9,6 +9,7 @@ import CancelReservation from './components/CancelReservation';
 import ViewReservation from './components/ViewReservation';
 import GuestNavigation from './components/GuestNavigation';
 import UserGuestSearch from './components/UserGuestSearch';
+import GuestSearch from './components/GuestSearch';
 import DepReturn from './components/DepReturn';
 import { BrowserRouter as Router, Route,Routes} from "react-router-dom";
 import {Link} from 'react-router-dom'
@@ -23,7 +24,7 @@ function Guest() {
       <Routes>
       
       <Route exact path ="/ViewFlightsUG" element={<ViewFlightsUG/>}/>
-      <Route exact path ="/UserGuestSearch" element={<UserGuestSearch/>}/>
+      <Route exact path ="/GuestSearch" element={<GuestSearch/>}/>
       <Route exact path ="/DepReturn" element={<DepReturn/>}/>
      
       </Routes>

@@ -103,6 +103,7 @@ else{
                 console.log("error")
               }
               else{
+                res.json(dbUser);
                 return res.json({
                   message: "Success",
                   token: "Bearer "+ token

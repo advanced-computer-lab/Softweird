@@ -20,7 +20,7 @@ ReactDOM.render(
  
  <Router>
   <Header/>
-  <Guest/>
+  <User/>
   </Router>,
 
   </React.StrictMode>,

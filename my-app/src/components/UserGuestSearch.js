@@ -235,7 +235,7 @@ export default function SearchFlight() {
               <StyledTableCell align="center">Allowed Baggage</StyledTableCell>
               <StyledTableCell align="center">Price</StyledTableCell>
               <StyledTableCell align="center">No.of seats</StyledTableCell>
-              <StyledTableCell align="center">reserve</StyledTableCell>
+              <StyledTableCell align="center">Reserve</StyledTableCell>
             </TableRow>
           </TableHead>
           {flight?  (
