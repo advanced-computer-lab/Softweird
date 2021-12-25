@@ -9,6 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import './background.css';
 
 
 const StyledTableCell  = styled(TableCell)(({ theme }) => ({
@@ -41,7 +42,7 @@ export default function ViewFlightsUG() {
 
 
   return (
-  
+    <div className='background'>
      <TableContainer component={Paper}>
      <Table sx={{ minWidth: 600 }} size="small" aria-label="a dense table">
        <TableHead>
@@ -87,6 +88,7 @@ export default function ViewFlightsUG() {
        </TableBody>
      </Table>
    </TableContainer>
+   </div>
  )
 
 

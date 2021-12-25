@@ -74,7 +74,7 @@ else{
 }
   });
   router.get("/getusername",authenticateToken,(req,res)=>{
-    res.json({isLoggedIn: true, username:req.user.Password})
+    res.json({isLoggedIn: true, username:req.user.username})
   })
 
   router.post("/login", async (req,res)=>{ 
@@ -83,7 +83,6 @@ else{
     .then(dbUser=> {
       if(!dbUser){
         console.log("not valid username")
-        
       }
       else{ 
         console.log(userlogin.Password)
@@ -94,6 +93,8 @@ else{
           const payload= {
             id: dbUser._id,
             username: dbUser.username,
+            
+            
           }
           jwt.sign(
             payload,
@@ -104,7 +105,10 @@ else{
                 console.log("error")
               }
               else{
+                console.log(token)
+                console.log("here" + dbUser)
                 res.json(dbUser);
+                
                 return res.json({
                   message: "Success",
                   token: "Bearer "+ token
@@ -144,6 +148,24 @@ function authenticateToken(req,res,next){
       });
 
   });
+  router.patch('/updatepassword', (req,res)=>{
+    console.log("entered backend")
+    bcrypt.compare(req.body.Oldpassword,req.body.currentPass).then(isCorrect => {
+      console.log(isCorrect)
+     if(isCorrect) {
+      User.updateMany({id: req.params.id}, req.body.Newpassword).then(result =>{
+        res.status(200).send("User updated ");
+        console.log(chalk.bold.blue('The User is Updated successfully !'));
+    }).catch(err => {
+        console.log(err);
+      });
+         
+       }
+      
+    
+
+  });
+});
 
   //Deleting an existing User
   router.delete('/delete-user/:id', (req,res)=>{

@@ -9,6 +9,7 @@ import FormControl from '@mui/material/FormControl'
 import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import Select from '@mui/material/Select'
+import './background.css';
 
 export default function UpdateFlight() {
   //const [flight,setFlight] = useState();
@@ -78,7 +79,7 @@ export default function UpdateFlight() {
   }, [confirm])
 
   return (
- 
+    <div className='background'>
 
     <Box
       
@@ -143,7 +144,7 @@ export default function UpdateFlight() {
       
     </Box>
     
-
+</div>
 
 
   );

@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import './background.css';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   alignItems: 'flex-start',
@@ -22,8 +23,10 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 
 export default function ProminentAppBar() {
   return (
+    
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
+      
         <StyledToolbar>
           <IconButton
             size="large"
@@ -54,7 +57,9 @@ export default function ProminentAppBar() {
             <MoreIcon />
           </IconButton>
         </StyledToolbar>
+        
       </AppBar>
     </Box>
+    
   );
 }

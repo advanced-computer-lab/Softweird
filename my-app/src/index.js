@@ -14,23 +14,56 @@ import CreateUser from './components/CreateUser';
 import CreateReservation from './components/CreateReservation';
 import DepReturn from './components/DepReturn';
 import UserGuestSearch from './components/UserGuestSearch';
+import ViewFlights from './components/ViewFlights';
+import ViewFlightsUG from './components/ViewFlightsUG';
+import UserSearch from './components/UserSearch';
+import UpdateUser from './components/UpdateUser';
+import ViewReservation from './components/ViewReservation';
+
+
+import GuestSearch from './components/GuestSearch';
+import Flightss from './components/Flightss';
+import Changepassword from './components/Changepassword';
+
+
+import UpdateFlight from './components/UpdateFlight';
+import SearchFlight from './components/SearchFlight';
+import Pickseats from './components/pickseats';
+
+
+
 
 ReactDOM.render(
   <React.StrictMode>
  
  <Router>
 
-  <div className="App">
+ 
   <Header/>
   <Routes>
+  <Route exact path ="/ViewFlightsUG" element={<ViewFlightsUG/>}/>
+   <Route exact path ="/UserSearch" element={<UserSearch/>}/>
     <Route exact path="/" element={<Login/>}/>
-    <Route exact path="/user" element={<User/>}/>
+    <Route exact path="/User" element={<User/>}/>
     <Route exact path="/App" element={<App/>}/>
     <Route exact path="/Signup" element={<Signup/>}/>
+    <Route exact path ="/UpdateUser" element={<UpdateUser/>}/>
+      <Route exact path ="/ViewReservation" element={<ViewReservation/>}/>
+      <Route exact path ="/Flightss" element={<Flightss/>}/>
+      <Route exact path ="/UpdateFlight" element={<UpdateFlight/>}/>
+      <Route exact path ="/ViewFlights" element={<ViewFlights/>}/>
+      <Route exact path ="/SearchFlight" element={<SearchFlight/>}/>
+      <Route exact path ="/ViewFlightsUG" element={<ViewFlightsUG/>}/>
+      <Route exact path ="/GuestSearch" element={<GuestSearch/>}/>
+      <Route exact path ="/DepReturn" element={<DepReturn/>}/>
+      <Route exact path ="/pickseats" element={<Pickseats/>}/>
+      <Route exact path ="/Changepassword" element={<Changepassword/>}/>
+      
+      
 
   </Routes>
    <Footer/>
-   </div>
+ 
   </Router>,
 
   </React.StrictMode>,

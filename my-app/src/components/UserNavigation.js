@@ -19,6 +19,9 @@ function UserNavigation(){
             <div>
                  <Link to="/ViewReservation" className= "User-link">View My Reservations</Link>
             </div>
+            <div>
+                 <Link to="/Changepassword" className= "User-link">Change password</Link>
+            </div>
             
         </div>
     )

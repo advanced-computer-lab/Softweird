@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './User.css';
+
 import Home  from './components/Searchbar';
 import ViewFlights from './components/ViewFlights';
 import ViewFlightsUG from './components/ViewFlightsUG';

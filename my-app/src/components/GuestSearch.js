@@ -20,6 +20,7 @@ import { styled } from '@mui/material/styles';
 import { Route } from 'react-router-dom';
 import ViewFlights from './ViewFlights';
 import ViewFlightsUG from './ViewFlightsUG';
+import './background.css';
 var searched= false;
 var information = false;
 var pay = false;
@@ -194,6 +195,7 @@ export default function GuestSearch() {
   }, [confirm])
 
   return (
+    <div className='background'>
     <Box
 
       component = "form"
@@ -408,7 +410,7 @@ export default function GuestSearch() {
  
     </Box>
 
-   
+   </div>
    
    )}
    ReactDOM.render(<GuestSearch />, document.getElementById('root'));

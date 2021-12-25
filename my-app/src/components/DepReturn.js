@@ -5,6 +5,7 @@ import {useState,useEffect,useRef} from 'react';
 import axios from "axios";
 import TextField from '@mui/material/TextField';
 import ReactDOM from "react-dom";
+import './background.css';
 
 export default function SearchFlight() {
   const [flightD,setFlightD] = useState();
@@ -54,7 +55,7 @@ export default function SearchFlight() {
   }, [confirm])
 
   return (
-
+<div className='background'>
     <Box
 
       component = "form"
@@ -82,7 +83,7 @@ export default function SearchFlight() {
 
     </Box>
 
-   
+    </div>
    
    )}
    ReactDOM.render(<SearchFlight />, document.getElementById('root'));

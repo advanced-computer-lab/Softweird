@@ -5,6 +5,7 @@ import {useState,useEffect,useRef} from 'react';
 import axios from "axios";
 import TextField from '@mui/material/TextField';
 import ReactDOM from "react-dom";
+import './background.css';
 
 export default function UpdateUser() {
   //const [flight,setFlight] = useState();
@@ -46,7 +47,7 @@ export default function UpdateUser() {
   }, [confirm])
 
   return (
-
+<div className='background'>
 
     <Box
 
@@ -82,7 +83,7 @@ export default function UpdateUser() {
     </Button>
       
     </Box>
-    
+    </div>
   );
 }
 ReactDOM.render(<UpdateUser />, document.getElementById('root'));

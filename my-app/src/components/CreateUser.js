@@ -6,6 +6,7 @@ import axios from "axios";
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import ReactDOM from "react-dom";
+import './background.css';
 
 export default function CreateUser() {
   
@@ -50,6 +51,7 @@ export default function CreateUser() {
   }, [confirm])
 
   return (
+    <div className='background'>
     <Box
 
       component="form"
@@ -109,6 +111,7 @@ export default function CreateUser() {
     </Button>
     
     </Box>
+    </div>
   );
 }
 ReactDOM.render(<CreateUser/>, document.getElementById('root'));

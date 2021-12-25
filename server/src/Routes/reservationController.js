@@ -6,7 +6,6 @@ const chalk = require('chalk');
 
 //Get all entered Reservations
 router.get('/get-all-reservations', (req, res) => {
-  
   Reservation.find()
     .then(result => {
       res.send(result);
@@ -29,8 +28,10 @@ router.get('/get-all-reservations', (req, res) => {
 */
   //search
   router.post('/search', (req, res) => {
+   
     Reservation.find(req.body)
       .then(result => {
+        
         res.send(result);
       })
       .catch(err => {
@@ -39,6 +40,41 @@ router.get('/get-all-reservations', (req, res) => {
   });
   
   // creating new Reservation
+  router.post('/nodemailer', (req,res) => {
+    console.log("reached")
+    const nodemailer = require('nodemailer');
+
+// Step 1
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        //user: process.env.EMAIL || 'aclbetra@gmail.com', // TODO: your gmail account
+        //pass: process.env.PASSWORD || 'betra123' // TODO: your gmail password
+        user: 'nodetrial77@gmail.com', // TODO: your gmail account
+        pass: 'node7trial' // TODO: your gmail password
+    }
+});
+
+// Step 2
+let mailOptions = {
+    from: 'nodetrial77@gmail.com', // TODO: email sender
+    to: req.body.Email, // TODO: email receiver
+    subject: 'Reservation cancelled',
+    text: 'you got a refund'
+};
+
+// Step 3
+transporter.sendMail(mailOptions, (err, data) => {
+    if (err) {
+      console.log(req.body.Email);
+        return console.log('Error occurs');
+        
+    }
+    console.log(req.body.Email);
+    return console.log('Email sent!!!');
+});
+  });
+
   router.post('/create-Reservation', (req, res) => {
     console.log("@@@@@@@@@@@@@@@@@@");
     console.log(req.body);

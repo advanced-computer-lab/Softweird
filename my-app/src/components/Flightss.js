@@ -10,6 +10,7 @@ import FormControl from '@mui/material/FormControl'
 import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import Select from '@mui/material/Select'
+import './background.css';
 
 export default function Flightss() {
   const [Cabin, setCabin] = React.useState('');
@@ -66,6 +67,7 @@ export default function Flightss() {
   }, [confirm])
 
   return (
+    <div className='background'>
     <Box
 
       component="form"
@@ -161,6 +163,7 @@ export default function Flightss() {
     </Button>
     
     </Box>
+    </div>
   );
 }
 ReactDOM.render(<Flightss />, document.getElementById('root'));

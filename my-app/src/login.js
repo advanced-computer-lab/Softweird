@@ -8,14 +8,14 @@ import axios from "axios";
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import ReactDOM from "react-dom";
-import SignupNavigation from './components/SignupNavigation';
+
 import { BrowserRouter as Router, Route,Routes} from "react-router-dom";
 import { checkPrime } from 'crypto';
 import { useFormControlUnstyled } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 
-const currentUser = {};
+var currentUser = {};
 
 function Login() {
 
@@ -33,9 +33,12 @@ function Login() {
           const password = useRef('');
           
           const userFound = (currentUser) => {
-
+           
+            const str= JSON.stringify(currentUser)
+            console.log(str+"cureent")
+          
             
-            if(Object.keys(currentUser).length === 0)
+            if(currentUser)
             {
               console.log("eeeeeeeeeee");
               alert("Wrong UserName or Password!");
@@ -54,14 +57,43 @@ function Login() {
           useEffect(() => {
             const body = {
                 username: username.current.value,
-               
-               Password: password.current.value
+                Password: password.current.value
         
             };
             
             if (confirm){
                 
-              axios.post(`http://localhost:8000/user/login`,body).then(res=> console.log(res) , userFound(currentUser))
+              axios.post(`http://localhost:8000/user/login`,body).then(res=> {
+            
+               if(res.data){
+                navigate('/User');
+                const user=res.data.username;
+               const firstname=res.data.FirstName;
+               const lastname=res.data.LastName;
+               const email=res.data.Email;
+               const passportnumber=res.data.PassportNumber;
+               const password=res.data.Password;
+               //const x=res.data.username;
+               //const x=res.data.username;
+               sessionStorage.setItem("user",user);
+                sessionStorage.setItem("firstname",firstname);
+                sessionStorage.setItem("lastname",lastname); 
+                sessionStorage.setItem("email",email); 
+                sessionStorage.setItem("passportnumber",passportnumber); 
+                sessionStorage.setItem("password",password);
+                
+                
+               }
+               else{
+                 alert("wrong pass or username")
+               }
+               
+               
+                
+               
+               
+              }
+              )
               .catch();
               setConfirm(false);
               }

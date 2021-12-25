@@ -18,6 +18,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import AirlineSeatReclineExtraIcon from '@mui/icons-material/AirlineSeatReclineExtra';
+import './background.css';
 
 var searched= false;
 var searched1 = false;
@@ -162,7 +163,7 @@ export default function SearchFlight() {
 
 
   return (
-
+    <div className='background'>
     <Box
 
       component = "form"
@@ -379,7 +380,7 @@ export default function SearchFlight() {
 
     </Box>
 
-   
+   </div>
    
    )}
    ReactDOM.render(<SearchFlight />, document.getElementById('root'));

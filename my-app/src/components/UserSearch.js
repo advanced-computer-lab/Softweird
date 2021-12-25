@@ -18,6 +18,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
+import './background.css';
 var searched= false;
 var pay = false;
 const  res1 = {};
@@ -53,6 +54,11 @@ export default function UserSearch() {
   const [confirm2,setConfirm2] = useState(false);
   const [Cabin, setCabin] = React.useState('');
   
+  console.log(sessionStorage.getItem("user")+"session");
+  console.log(sessionStorage.getItem("firstname")+"session");
+  console.log(sessionStorage.getItem("lastname")+"session");
+  console.log(sessionStorage.getItem("email")+"session");
+  //console.log(current.FirstName+"here")
   const handleChange = (event) => {
     setCabin(event.target.value);
     
@@ -80,17 +86,18 @@ export default function UserSearch() {
   const email = useRef('');
  
 
+ 
   const shoot = (a) => {
  
     setConfirm1(true);
     
 
-    console.log(a);
  
-   res1["FirstName"] = Login.currentUser.FirstName;
-   res1["LastName"] = Login.currentUser.LastName;
-   res1["PassportNumber"] = Login.currentUser.PassportNumber;
-   res1["Email"] = Login.currentUser.Email;
+ 
+   res1["FirstName"] = sessionStorage.getItem("firstname");
+   res1["LastName"] = sessionStorage.getItem("lastname");
+   res1["PassportNumber"] = sessionStorage.getItem("passportnumber");
+   res1["Email"] = sessionStorage.getItem("email");
    res1["FlightNumber"] = a.FlightNumber;
    res1["From"] = a.From;
    res1["To"] = a.To;
@@ -110,10 +117,10 @@ export default function UserSearch() {
     setConfirm2(true);
     pay = true;
 
-   res2["FirstName"] = "ggg";
-   res2["LastName"] = "ggg";
-   res2["PassportNumber"] = "ggg";
-   res2["Email"] = "ggg";
+    res2["FirstName"] = sessionStorage.getItem("firstname");
+   res2["LastName"] = sessionStorage.getItem("lastname");
+   res2["PassportNumber"] = sessionStorage.getItem("passportnumber");
+   res2["Email"] = sessionStorage.getItem("email");
    res2["FlightNumber"] = a.FlightNumber;
    res2["From"] = a.From;
    res2["To"] = a.To;
@@ -136,9 +143,8 @@ export default function UserSearch() {
   }
   function payment()
   {
-    
-    
-   
+    console.log(res1)
+    console.log(res2)
     axios.post(`http://localhost:8000/reservation/create-Reservation`,res1).then(res=> {console.log(res.data)}).catch();
     axios.post(`http://localhost:8000/reservation/create-Reservation`,res2).then(res=> {console.log(res.data)}).catch();
   }
@@ -193,6 +199,7 @@ export default function UserSearch() {
   }, [confirm])
 
   return (
+    <div className='background'>
     <Box
 
       component = "form"
@@ -376,7 +383,7 @@ export default function UserSearch() {
          )}
     </Box>
 
-   
+    </div>
    
    )}
    ReactDOM.render(<UserSearch />, document.getElementById('root'));
